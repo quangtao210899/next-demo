@@ -15,7 +15,8 @@ const BlankLayoutWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     minHeight: '100vh',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: theme.spacing(5)
+    padding: theme.spacing(5),
+    backgroundColor: "#EEE"
   },
 
   // For V2 Blank layout pages

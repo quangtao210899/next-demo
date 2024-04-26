@@ -1,29 +1,21 @@
 "use client"
-import { ChangeEvent, MouseEvent, ReactNode, useState } from 'react'
-
-// ** Next Imports
+import { ChangeEvent, MouseEvent, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
-
-// ** MUI Components
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import CardContent from '@mui/material/CardContent'
 import OutlinedInput from '@mui/material/OutlinedInput'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import MuiCard, { CardProps } from '@mui/material/Card'
 import InputAdornment from '@mui/material/InputAdornment'
-import MuiFormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
 import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid';
-// ** Icons Imports
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
-// ** Layout Import
-import BlankLayout from '../layouts/BlankLayout'
 
 
 interface State {
@@ -31,37 +23,22 @@ interface State {
   showPassword: boolean
 }
 
-// ** Styled Components
 const Card = styled(MuiCard)<CardProps>(({ theme }) => ({
   [theme.breakpoints.up('sm')]: { width: '28rem' }
 }))
 
-const LinkStyled = styled('a')(({ theme }) => ({
-  fontSize: '0.875rem',
-  textDecoration: 'none',
-  color: theme.palette.primary.main
-}))
 
-const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ theme }) => ({
-  '& .MuiFormControlLabel-label': {
-    fontSize: '0.875rem',
-    color: theme.palette.text.secondary
-  }
-}))
 const FormGrid = styled(Grid)(() => ({
   display: 'flex',
   flexDirection: 'column',
 }));
 
 const LoginPage = () => {
-  // ** State
   const [values, setValues] = useState<State>({
     password: '',
     showPassword: false
   })
 
-  // ** Hook
-  const theme = useTheme()
   const router = useRouter()
 
   const handleChange = (prop: keyof State) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -153,17 +130,18 @@ const LoginPage = () => {
               variant='contained'
               sx={{ 
                 marginBottom: 2,
-                radius: "2px"
+                radius: "2px",
+                backgroundColor: "#68A7B9" 
               }}
               onClick={() => router.push('/login')}
             >
               サインイン
             </Button>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center'}}>
               <Typography variant='body2' sx={{
                 fontSize: '0.875rem',
                 textDecoration: 'none',
-                color: theme.palette.primary.main
+                color: "#68A7B9"
               }}>
                 <Link passHref href='/pages/register'>
                   パスワードをお忘れの場合はこちら
