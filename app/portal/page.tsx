@@ -14,6 +14,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -41,7 +42,7 @@ const portal = () => {
         </Typography>
       </Box>
       {/* Text random */}
-      <Box sx={{ mt: 0,mb: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ mt: 0, mb: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Typography
           sx={{
             fontSize: '36px !important',
@@ -55,24 +56,169 @@ const portal = () => {
         </Typography>
       </Box>
 
-      <Grid container justifyContent="space-between"  spacing={{ xs: 8, md: 12 }} columns={{ xs: 4, sm: 8, md: 12 }} style={{ padding: '0 120px' }}>
+      <Grid container justifyContent="space-between" spacing={{ xs: 8, md: 12 }} columns={{ xs: 4, sm: 8, md: 12 }} style={{ padding: '0 100px' }}>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>xs=4</Item>
+          <Item>
+            <Box>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                color="inherit">
+                <AccountCircle />
+              </IconButton>
+              <Typography
+                sx={{
+                  fontSize: '27px !important',
+                  fontWeight: '700 !important',
+                  color: "#606060",
+                  lineHieght: "10.55px",
+                  fontFamily: "Roboto",
+                  overflowWrap: "break-word"
+                }}
+              >
+                オペレーター <br/>UI
+              </Typography>
+            </Box>
+          </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>xs=4</Item>
+          <Item>
+            <Box>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                color="inherit">
+                <AccountCircle />
+              </IconButton>
+              <Typography
+                sx={{
+                  fontSize: '27px !important',
+                  fontWeight: '700 !important',
+                  color: "#606060",
+                  lineHieght: "10.55px",
+                  fontFamily: "Roboto",
+                  overflowWrap: "break-word"
+                }}
+              >
+                ユーザー設定
+              </Typography>
+            </Box>
+
+          </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>xs=4</Item>
+          <Item>
+            <Box>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                color="inherit">
+                <AccountCircle />
+              </IconButton>
+              <Typography
+                sx={{
+                  fontSize: '27px !important',
+                  fontWeight: '700 !important',
+                  color: "#606060",
+                  lineHieght: "10.55px",
+                  fontFamily: "Roboto",
+                  overflowWrap: "break-word"
+                }}
+              >
+                対象設定
+              </Typography>
+            </Box>
+          </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>xs=4</Item>
+          <Item>
+            <Box>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                color="inherit">
+                <AccountCircle />
+              </IconButton>
+              <Typography
+                sx={{
+                  fontSize: '27px !important',
+                  fontWeight: '700 !important',
+                  color: "#606060",
+                  lineHieght: "10.55px",
+                  fontFamily: "Roboto",
+                  overflowWrap: "break-word"
+                }}
+              >
+                イニシャルト <br/> ーク設定
+              </Typography>
+            </Box>
+          </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>xs=4</Item>
+          <Item>
+            <Box>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                color="inherit">
+                <AccountCircle />
+              </IconButton>
+              <Typography
+                sx={{
+                  fontSize: '27px !important',
+                  fontWeight: '700 !important',
+                  color: "#606060",
+                  lineHieght: "10.55px",
+                  fontFamily: "Roboto",
+                  overflowWrap: "break-word"
+                }}
+              >
+                スマートチェッ<br/>クリスト設定
+              </Typography>
+            </Box>
+          </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>xs=4</Item>
+          <Item>
+            <Box>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                color="inherit">
+                <AccountCircle />
+              </IconButton>
+              <Typography
+                sx={{
+                  fontSize: '27px !important',
+                  fontWeight: '700 !important',
+                  color: "#606060",
+                  lineHieght: "10.55px",
+                  fontFamily: "Roboto",
+                  overflowWrap: "break-word"
+                }}
+              >
+                ジョブ設定
+              </Typography>
+            </Box>
+          </Item>
         </Grid>
       </Grid>
     </Box>

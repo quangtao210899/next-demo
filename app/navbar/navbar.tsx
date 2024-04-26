@@ -105,7 +105,7 @@ export default function PrimarySearchAppBar() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '45px' } }}
+              sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '54px' } }}
               color="inherit">
               <AccountCircle />
             </IconButton>
