@@ -1,3 +1,4 @@
+'use client'
 import { ChangeEvent, MouseEvent, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
@@ -15,9 +16,30 @@ import Grid from '@mui/material/Grid';
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
+const Card = styled(MuiCard)<CardProps>(({ theme }) => ({
+  [theme.breakpoints.up('sm')]: { width: '28rem' }
+}))
 const portal = () => {
   return (
-    <div>portal</div>
+    <Box className='content-center'>
+      <Box sx={{mt: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Typography
+          sx={{
+            fontSize: '96px !important',
+            fontWeight: '900 !important',
+            color: "#68A7B9",
+            lineHieght: "57.81px",
+            fontFamily: "Odor Mean Chey"
+          }}
+        >
+          C3P
+        </Typography>
+      </Box>
+      <Card sx={{ zIndex: 1 }}>
+        {/* <CardContent sx={{ padding: theme => `${theme.spacing(3, 5, 5)} !important` }}>
+        </CardContent> */}
+      </Card>
+    </Box>
   )
 }
 

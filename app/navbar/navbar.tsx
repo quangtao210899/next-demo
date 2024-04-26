@@ -89,22 +89,14 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: '#555' }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <Image
-              src="/logo_c3b.svg"
-              alt="Logo C3B"
-              width={45}
-              height={45}
-              priority
-            />
-            {/* <img src="../" alt="logo icon" style={{ width: '45px' }} /> */}
-          </IconButton>
+          <Image
+            src="/logo2.png"
+            alt="Logo C3B"
+            width={60}
+            height={60}
+            priority
+            style={{ margin: '0px' }} // Thiết lập margin thành 0px
+          />
           <Box sx={{ flexGrow: 1 }} />
           <Box>
             <IconButton

@@ -30,7 +30,7 @@ export default function RootLayout({
         <link rel='shortcut icon' href='/images/favicon.png' />
       </head>
       <body className={inter.className}>
-        <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative' }}>
+        <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative', backgroundColor: "#EEE" }}>
           <PrimarySearchAppBar/>
           {children}
         </Box>
