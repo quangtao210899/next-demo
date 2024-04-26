@@ -7,7 +7,7 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import CardContent from '@mui/material/CardContent'
-import OutlinedInput from '@mui/material/OutlinedInput'
+import TextField from "@mui/material/TextField";
 import { styled } from '@mui/material/styles'
 import MuiCard, { CardProps } from '@mui/material/Card'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -15,11 +15,12 @@ import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid';
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-
+import { z } from 'zod';
 
 
 interface State {
   password: string
+  username: string
   showPassword: boolean
 }
 
@@ -33,9 +34,16 @@ const FormGrid = styled(Grid)(() => ({
   flexDirection: 'column',
 }));
 
+const LoginFormSchema = z.object({
+  username: z.string().min(1, 'ユーザー名が間違っています'),
+  password: z.string().min(1, 'パスワードが間違っています'),
+});
+
 const LoginPage = () => {
+  const [errors, setErrors] = useState<{ [key: string]: string | null }>({ username: null, password: null });
   const [values, setValues] = useState<State>({
     password: '',
+    username: '',
     showPassword: false
   })
 
@@ -52,6 +60,24 @@ const LoginPage = () => {
   const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
   }
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      await LoginFormSchema.parseAsync({ username: values.username, password: values.password });
+      console.log('Formis valid');
+      setErrors({});
+      router.push('/login');
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const fieldErrors: { [key: string]: string | null } = {};
+        error.errors.forEach((err) => {
+          fieldErrors[err.path[0]] = err.message;
+        });
+        setErrors(fieldErrors);
+      }
+    }
+  };
 
   return (
     <Box className='content-center'>
@@ -70,7 +96,7 @@ const LoginPage = () => {
               C3P
             </Typography>
           </Box>
-          <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
+          <form autoComplete='off'>
             <FormGrid item xs={12} md={6}>
               <FormLabel htmlFor="username" 
                 sx={{
@@ -83,11 +109,14 @@ const LoginPage = () => {
               >
                 ユーザーネーム
               </FormLabel>
-              <OutlinedInput
-                id="username"
-                name="username"
-                type="text"
-                required
+              <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  margin="dense"
+                  value={values.username}
+                  onChange={handleChange('username')}
+                  error = {!!errors.username}
+                  helperText={errors.username}
               />
             </FormGrid>
             <FormGrid item xs={12} md={6} mt={2}>
@@ -102,22 +131,26 @@ const LoginPage = () => {
               >
                 パスワード
               </FormLabel>
-              <OutlinedInput
+              <TextField
                 value={values.password}
                 onChange={handleChange('password')}
                 type={values.showPassword ? 'text' : 'password'}
-                endAdornment={
-                  <InputAdornment position='end'>
-                    <IconButton
-                      edge='end'
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      aria-label='toggle password visibility'
-                    >
-                      {values.showPassword ? <EyeOutline /> : <EyeOffOutline />}
-                    </IconButton>
-                  </InputAdornment>
-                }
+                error = {!!errors.password}
+                helperText={errors.password}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {values.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                      </IconButton>
+                    </InputAdornment>
+                  )
+                }}
+                required
               />
             </FormGrid>
             <Box
@@ -131,9 +164,12 @@ const LoginPage = () => {
               sx={{ 
                 marginBottom: 2,
                 radius: "2px",
-                backgroundColor: "#68A7B9" 
+                backgroundColor: "#68A7B9",
+                '&:hover': {
+                  backgroundColor: "#5b8e9f",
+                }
               }}
-              onClick={() => router.push('/login')}
+              onClick={handleSubmit}
             >
               サインイン
             </Button>
