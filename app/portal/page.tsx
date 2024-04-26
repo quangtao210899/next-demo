@@ -61,9 +61,9 @@ const portal = () => {
         </Typography>
       </Box>
 
-      <Grid container justifyContent="space-between" spacing={{ xs: 8, md: 12 }} columns={{ xs: 4, sm: 8, md: 12 }} style={{ padding: '0 100px' }}>
+      <Grid container justifyContent="space-between" spacing={{ xs: 8, md: 12 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>
+          <Item sx={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}> 
             <Box>
               <IconButton
                 size="large"
