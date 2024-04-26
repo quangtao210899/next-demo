@@ -63,7 +63,7 @@ const portal = () => {
 
       <Grid container justifyContent="space-between" spacing={{ xs: 8, md: 12 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         <Grid item xs={2} sm={4} md={4}>
-          <Item sx={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}> 
+          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}> 
             <Box>
               <IconButton
                 size="large"
@@ -90,7 +90,7 @@ const portal = () => {
           </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>
+          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
             <Box>
               <IconButton
                 size="large"
@@ -118,7 +118,7 @@ const portal = () => {
           </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>
+          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
             <Box>
               <IconButton
                 size="large"
@@ -145,7 +145,7 @@ const portal = () => {
           </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>
+          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}> 
             <Box>
               <IconButton
                 size="large"
@@ -172,7 +172,7 @@ const portal = () => {
           </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>
+          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
             <Box>
               <IconButton
                 size="large"
@@ -199,7 +199,7 @@ const portal = () => {
           </Item>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item>
+          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
             <Box>
               <IconButton
                 size="large"
