@@ -67,7 +67,7 @@ const LoginPage = () => {
       await LoginFormSchema.parseAsync({ username: values.username, password: values.password });
       console.log('Formis valid');
       setErrors({});
-      router.push('/login');
+      router.push('/portal');
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: { [key: string]: string | null } = {};
