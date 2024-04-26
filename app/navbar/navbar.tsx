@@ -9,6 +9,7 @@ import Menu from '@mui/material/Menu';
 import Image from "next/image";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
+
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =

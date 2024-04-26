@@ -15,7 +15,12 @@ import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
+import PermPhoneMsgOutlinedIcon from '@mui/icons-material/PermPhoneMsgOutlined';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -67,7 +72,7 @@ const portal = () => {
                 aria-haspopup="true"
                 sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
                 color="inherit">
-                <AccountCircle />
+                <HeadsetMicOutlinedIcon />
               </IconButton>
               <Typography
                 sx={{
@@ -94,7 +99,7 @@ const portal = () => {
                 aria-haspopup="true"
                 sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
                 color="inherit">
-                <AccountCircle />
+                <AccountCircleIcon />
               </IconButton>
               <Typography
                 sx={{
@@ -122,7 +127,7 @@ const portal = () => {
                 aria-haspopup="true"
                 sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
                 color="inherit">
-                <AccountCircle />
+                <GroupsOutlinedIcon />
               </IconButton>
               <Typography
                 sx={{
@@ -149,7 +154,7 @@ const portal = () => {
                 aria-haspopup="true"
                 sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
                 color="inherit">
-                <AccountCircle />
+                <DescriptionOutlinedIcon />
               </IconButton>
               <Typography
                 sx={{
@@ -176,7 +181,7 @@ const portal = () => {
                 aria-haspopup="true"
                 sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
                 color="inherit">
-                <AccountCircle />
+                <CheckBoxOutlinedIcon />
               </IconButton>
               <Typography
                 sx={{
@@ -203,7 +208,7 @@ const portal = () => {
                 aria-haspopup="true"
                 sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
                 color="inherit">
-                <AccountCircle />
+                <PermPhoneMsgOutlinedIcon />
               </IconButton>
               <Typography
                 sx={{
