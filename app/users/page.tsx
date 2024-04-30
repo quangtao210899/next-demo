@@ -49,13 +49,13 @@ import * as React from 'react';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
+import Grid from '@mui/material/Grid';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
@@ -63,7 +63,6 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { visuallyHidden } from '@mui/utils';
 
 interface Data {
   id: number;
@@ -191,7 +190,7 @@ interface EnhancedTableProps {
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
-  const { onSelectAllClick, numSelected, rowCount } =props;
+  const { onSelectAllClick, numSelected, rowCount } = props;
 
   return (
     <TableHead>
@@ -210,6 +209,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
+            align={headCell.numeric ? 'right' : 'left'}
+            padding={headCell.disablePadding ? 'none' : 'normal'}
           >
             {headCell.label}
           </TableCell>
@@ -328,6 +329,28 @@ export default function EnhancedTable() {
 
   return (
     <Box sx={{ width: '100%' }}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="baseline"
+        sx={{
+          mt: 2
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: '32px !important',
+            fontWeight: '700 !important',
+            color: "#68A7B9",
+            fontFamily: "Noto Sans JP",
+          }}
+        >
+          ユーザー一覧
+        </Typography>
+        <h1>Chào</h1>
+      </Grid>
+
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
