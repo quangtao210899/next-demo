@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Image from "next/image";
 import AccountCircle from '@mui/icons-material/AccountCircle';
-
+import { usePathname } from 'next/navigation'
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -85,36 +85,39 @@ export default function NavBar() {
       </MenuItem>
     </Menu>
   );
-
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#555' }}>
-        <Toolbar>
-          <Image
-            src="/logo2.png"
-            alt="Logo C3B"
-            width={60}
-            height={60}
-            priority
-            style={{ margin: '0px' }} // Thiết lập margin thành 0px
-          />
-          <Box sx={{ flexGrow: 1 }} />
-          <Box>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '54px' } }}
-              color="inherit">
-              <AccountCircle />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </Box>
-  );
+  const pathname = usePathname() 
+  const isLogin = (pathname === "/login")
+  if (!isLogin){
+    return (
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static" sx={{ backgroundColor: '#555' }}>
+          <Toolbar>
+            <Image
+              src="/logo2.png"
+              alt="Logo C3B"
+              width={60}
+              height={60}
+              priority
+              style={{ margin: '0px' }} // Thiết lập margin thành 0px
+            />
+            <Box sx={{ flexGrow: 1 }} />
+            <Box>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '54px' } }}
+                color="inherit">
+                <AccountCircle />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+        {renderMenu}
+      </Box>
+    );
+  }
 }
