@@ -101,7 +101,7 @@ const portal = () => {
                   overflowWrap: "break-word"
                 }}
               >
-                ユーザー設定
+                ユーザー設定 <br/>&nbsp;
               </Typography>
             </Box>
           </Item>
@@ -128,7 +128,7 @@ const portal = () => {
                   overflowWrap: "break-word"
                 }}
               >
-                対象設定
+                対象設定<br/>&nbsp;
               </Typography>
             </Box>
           </Item>
@@ -209,7 +209,7 @@ const portal = () => {
                   overflowWrap: "break-word"
                 }}
               >
-                ジョブ設定
+                ジョブ設定<br/>&nbsp;
               </Typography>
             </Box>
           </Item>
