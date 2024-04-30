@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Box from '@mui/material/Box'
-import PrimarySearchAppBar from './navbar/navbar'
+import NavBar from './navbar/navbar'
 import Container from '@mui/material/Container';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +31,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative', backgroundColor: "#EEE" }}>
-          <PrimarySearchAppBar />
+          <NavBar />
           <Container>
             {/* <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} /> */}
             {children}

@@ -10,7 +10,7 @@ import Image from "next/image";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
 
-export default function PrimarySearchAppBar() {
+export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
