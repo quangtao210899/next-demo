@@ -1,11 +1,6 @@
 "use client"
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
-
-// ** Types
-import { BlankLayoutProps } from '../layouts/types'
-
-// Styled component for Blank Layout component
 const BlankLayoutWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   height: '100vh',
 
@@ -27,8 +22,11 @@ const BlankLayoutWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     position: 'relative'
   }
 }))
-
-const BlankLayout = ({ children }: BlankLayoutProps) => {
+export default function BlankLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <BlankLayoutWrapper className='layout-wrapper'>
       <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative' }}>
@@ -38,4 +36,3 @@ const BlankLayout = ({ children }: BlankLayoutProps) => {
   )
 }
 
-export default BlankLayout
