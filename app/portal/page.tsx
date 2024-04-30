@@ -1,10 +1,5 @@
 'use client'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import { styled } from '@mui/material/styles'
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
+import { Grid, Typography, Box, IconButton, styled, Paper, Link } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
@@ -51,168 +46,180 @@ const portal = () => {
         </Typography>
       </Box>
 
-      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 4, sm: 8, md: 12 }} columns={{ xs: 2, sm: 8, md: 12 }}>
+      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 4, sm: 6, md: 6 }} columns={{ xs: 2, sm: 8, md: 12 }} sx={{ mb: 2 }}>
         <Grid item xs={2} sm={4} md={4}>
-          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}> 
-            <Box>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
-                color="inherit">
-                <HeadsetMicOutlinedIcon />
-              </IconButton>
-              <Typography
-                sx={{
-                  fontSize: '18px !important',
-                  fontWeight: '700 !important',
-                  color: "#606060",
-                  lineHieght: "10.55px",
-                  fontFamily: "Roboto",
-                  overflowWrap: "break-word"
-                }}
-              >
-                オペレーター <br/>UI
-              </Typography>
-            </Box>
-          </Item>
+          <Link href="/users" sx={{ textDecoration: 'none' }}>
+            <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
+              <Box>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-haspopup="true"
+                  sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                  color="inherit">
+                  <HeadsetMicOutlinedIcon />
+                </IconButton>
+                <Typography
+                  sx={{
+                    fontSize: '18px !important',
+                    fontWeight: '700 !important',
+                    color: "#606060",
+                    lineHieght: "10.55px",
+                    fontFamily: "Roboto",
+                    overflowWrap: "break-word"
+                  }}
+                >
+                  オペレーター <br />UI
+                </Typography>
+              </Box>
+            </Item>
+          </Link>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
-            <Box>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
-                color="inherit">
-                <AccountCircleIcon />
-              </IconButton>
-              <Typography
-                sx={{
-                  fontSize: '18px !important',
-                  fontWeight: '700 !important',
-                  color: "#606060",
-                  lineHieght: "10.55px",
-                  fontFamily: "Roboto",
-                  overflowWrap: "break-word"
-                }}
-              >
-                ユーザー設定 <br/>&nbsp;
-              </Typography>
-            </Box>
-          </Item>
+          <Link href="/users" sx={{ textDecoration: 'none' }}>
+            <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
+              <Box>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-haspopup="true"
+                  sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                  color="inherit">
+                  <AccountCircleIcon />
+                </IconButton>
+                <Typography
+                  sx={{
+                    fontSize: '18px !important',
+                    fontWeight: '700 !important',
+                    color: "#606060",
+                    lineHieght: "10.55px",
+                    fontFamily: "Roboto",
+                    overflowWrap: "break-word"
+                  }}
+                >
+                  ユーザー設定 <br />&nbsp;
+                </Typography>
+              </Box>
+            </Item>
+          </Link>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
-            <Box>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
-                color="inherit">
-                <GroupsOutlinedIcon />
-              </IconButton>
-              <Typography
-                sx={{
-                  fontSize: '18px !important',
-                  fontWeight: '700 !important',
-                  color: "#606060",
-                  lineHieght: "10.55px",
-                  fontFamily: "Roboto",
-                  overflowWrap: "break-word"
-                }}
-              >
-                対象設定<br/>&nbsp;
-              </Typography>
-            </Box>
-          </Item>
+          <Link href="/users" sx={{ textDecoration: 'none' }}>
+            <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
+              <Box>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-haspopup="true"
+                  sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                  color="inherit">
+                  <GroupsOutlinedIcon />
+                </IconButton>
+                <Typography
+                  sx={{
+                    fontSize: '18px !important',
+                    fontWeight: '700 !important',
+                    color: "#606060",
+                    lineHieght: "10.55px",
+                    fontFamily: "Roboto",
+                    overflowWrap: "break-word"
+                  }}
+                >
+                  対象設定<br />&nbsp;
+                </Typography>
+              </Box>
+            </Item>
+          </Link>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}> 
-            <Box>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
-                color="inherit">
-                <DescriptionOutlinedIcon />
-              </IconButton>
-              <Typography
-                sx={{
-                  fontSize: '18px !important',
-                  fontWeight: '700 !important',
-                  color: "#606060",
-                  lineHieght: "10.55px",
-                  fontFamily: "Roboto",
-                  overflowWrap: "break-word"
-                }}
-              >
-                イニシャルト <br/> ーク設定
-              </Typography>
-            </Box>
-          </Item>
+          <Link href="/users" sx={{ textDecoration: 'none' }}>
+            <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
+              <Box>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-haspopup="true"
+                  sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                  color="inherit">
+                  <DescriptionOutlinedIcon />
+                </IconButton>
+                <Typography
+                  sx={{
+                    fontSize: '18px !important',
+                    fontWeight: '700 !important',
+                    color: "#606060",
+                    lineHieght: "10.55px",
+                    fontFamily: "Roboto",
+                    overflowWrap: "break-word"
+                  }}
+                >
+                  イニシャルト <br /> ーク設定
+                </Typography>
+              </Box>
+            </Item>
+          </Link>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
-            <Box>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
-                color="inherit">
-                <CheckBoxOutlinedIcon />
-              </IconButton>
-              <Typography
-                sx={{
-                  fontSize: '18px !important',
-                  fontWeight: '700 !important',
-                  color: "#606060",
-                  lineHieght: "10.55px",
-                  fontFamily: "Roboto",
-                  overflowWrap: "break-word"
-                }}
-              >
-                スマートチェッ<br/>クリスト設定
-              </Typography>
-            </Box>
-          </Item>
+          <Link href="/users" sx={{ textDecoration: 'none' }}>
+            <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
+              <Box>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-haspopup="true"
+                  sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                  color="inherit">
+                  <CheckBoxOutlinedIcon />
+                </IconButton>
+                <Typography
+                  sx={{
+                    fontSize: '18px !important',
+                    fontWeight: '700 !important',
+                    color: "#606060",
+                    lineHieght: "10.55px",
+                    fontFamily: "Roboto",
+                    overflowWrap: "break-word"
+                  }}
+                >
+                  スマートチェッ<br />クリスト設定
+                </Typography>
+              </Box>
+            </Item>
+          </Link>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
-            <Box>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
-                color="inherit">
-                <PermPhoneMsgOutlinedIcon />
-              </IconButton>
-              <Typography
-                sx={{
-                  fontSize: '18px !important',
-                  fontWeight: '700 !important',
-                  color: "#606060",
-                  lineHieght: "10.55px",
-                  fontFamily: "Roboto",
-                  overflowWrap: "break-word"
-                }}
-              >
-                ジョブ設定<br/>&nbsp;
-              </Typography>
-            </Box>
-          </Item>
+          <Link href="/users" sx={{ textDecoration: 'none' }}>
+            <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
+              <Box>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-haspopup="true"
+                  sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '105px', color: '#68A7B9' } }}
+                  color="inherit">
+                  <PermPhoneMsgOutlinedIcon />
+                </IconButton>
+                <Typography
+                  sx={{
+                    fontSize: '18px !important',
+                    fontWeight: '700 !important',
+                    color: "#606060",
+                    lineHieght: "10.55px",
+                    fontFamily: "Roboto",
+                    overflowWrap: "break-word"
+                  }}
+                >
+                  ジョブ設定<br />&nbsp;
+                </Typography>
+              </Box>
+            </Item>
+          </Link>
         </Grid>
       </Grid>
     </Box>
