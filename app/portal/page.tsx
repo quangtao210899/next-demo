@@ -1,17 +1,8 @@
 'use client'
-import { ChangeEvent, MouseEvent, useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation';
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import CardContent from '@mui/material/CardContent'
-import TextField from "@mui/material/TextField";
 import { styled } from '@mui/material/styles'
-import MuiCard, { CardProps } from '@mui/material/Card'
-import InputAdornment from '@mui/material/InputAdornment'
-import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -35,7 +26,7 @@ const portal = () => {
       <Box sx={{ mt: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Typography
           sx={{
-            fontSize: '96px !important',
+            fontSize: '64px !important',
             fontWeight: '900 !important',
             color: "#68A7B9",
             lineHieght: "57.81px",
@@ -49,7 +40,7 @@ const portal = () => {
       <Box sx={{ mt: 0, mb: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Typography
           sx={{
-            fontSize: '36px !important',
+            fontSize: '24px !important',
             fontWeight: '700 !important',
             color: "#5C5C5C",
             lineHieght: "14.06px",
@@ -75,7 +66,7 @@ const portal = () => {
               </IconButton>
               <Typography
                 sx={{
-                  fontSize: '27px !important',
+                  fontSize: '18px !important',
                   fontWeight: '700 !important',
                   color: "#606060",
                   lineHieght: "10.55px",
@@ -102,7 +93,7 @@ const portal = () => {
               </IconButton>
               <Typography
                 sx={{
-                  fontSize: '27px !important',
+                  fontSize: '18px !important',
                   fontWeight: '700 !important',
                   color: "#606060",
                   lineHieght: "10.55px",
@@ -130,7 +121,7 @@ const portal = () => {
               </IconButton>
               <Typography
                 sx={{
-                  fontSize: '27px !important',
+                  fontSize: '18px !important',
                   fontWeight: '700 !important',
                   color: "#606060",
                   lineHieght: "10.55px",
@@ -157,7 +148,7 @@ const portal = () => {
               </IconButton>
               <Typography
                 sx={{
-                  fontSize: '27px !important',
+                  fontSize: '18px !important',
                   fontWeight: '700 !important',
                   color: "#606060",
                   lineHieght: "10.55px",
@@ -184,7 +175,7 @@ const portal = () => {
               </IconButton>
               <Typography
                 sx={{
-                  fontSize: '27px !important',
+                  fontSize: '18px !important',
                   fontWeight: '700 !important',
                   color: "#606060",
                   lineHieght: "10.55px",
@@ -211,7 +202,7 @@ const portal = () => {
               </IconButton>
               <Typography
                 sx={{
-                  fontSize: '27px !important',
+                  fontSize: '18px !important',
                   fontWeight: '700 !important',
                   color: "#606060",
                   lineHieght: "10.55px",

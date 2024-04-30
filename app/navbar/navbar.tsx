@@ -95,10 +95,10 @@ export default function NavBar() {
             <Image
               src="/logo2.png"
               alt="Logo C3B"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
-              style={{ margin: '0px' }} // Thiết lập margin thành 0px
+              style={{ margin: '0px' }}
             />
             <Box sx={{ flexGrow: 1 }} />
             <Box>
@@ -108,7 +108,7 @@ export default function NavBar() {
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '54px' } }}
+                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '36px' } }}
                 color="inherit">
                 <AccountCircle />
               </IconButton>
