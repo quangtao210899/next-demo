@@ -1,4 +1,18 @@
 -Theme: học cách thêm vào project
+
 -Autocomplete => select
     +Customized hook, Multiple , Checkboxes: multi select
-    +Load on open
+    +Load on open (loading)
+-Button: 
+    +File upload
+-Button group
+-Checkbox
+    +FormGroup
+-Radio
+-Rating (vote sao)
+-sliders (kéo thả thanh âm lượng)
+-Switch (toggle)
+-Textfield:
+    +icons
+    +Input Adornments
+-Transfer List: danh sách chuyển nhượng (chức năng cần)
