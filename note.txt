@@ -36,3 +36,18 @@
 -Progress: icon loading
 -Skeleton: hiển thị trước dữ liệu để chờ trong thời gian tải
 -Snackbar: hiển thị thông báo trong 1 thời gian rồi tắt (hơi xấu :D)
+-Accordion: Cho phép ẩn hiện nội dung trên 1 trang
+-App bar: (có thanh search)
+-Card: Thẻ chứa nội dung
+-Paper: Hộp chứa có độ bóng (container, box)
+-Bottom Navigation: thanh điều hướng giúp cho phép di chuyển giữa các điểm trong app
+-Breadcrumbs
+-Drawer: Hiển thị các thanh sidebar
+-Link
+-Menu (sử dụng cho navbar)
+-pagination
+-Speed Dial: cách icon hỗ trợ ở góc dưới bên phải màn hình
+-Stepper: Thực hiện công việc qua các bước hoặc làm slider
+-Tabs: sử dụng làm các tab màn hình
+*layout
+-
