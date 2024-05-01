@@ -50,4 +50,8 @@
 -Stepper: Thực hiện công việc qua các bước hoặc làm slider
 -Tabs: sử dụng làm các tab màn hình
 *layout
--
+-Box: được coi như 1 thẻ div
+-Container
+-Grid, Grid v2
+-Stack: sắp sếp lần lượt các item vào trong thùng chứa (container)
+-Image list
