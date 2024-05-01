@@ -113,6 +113,7 @@ const LoginPage = () => {
                   id="outlined-basic"
                   variant="outlined"
                   margin="dense"
+                  size = "small"
                   value={values.username}
                   onChange={handleChange('username')}
                   error = {!!errors.username}
@@ -137,6 +138,7 @@ const LoginPage = () => {
                 type={values.showPassword ? 'text' : 'password'}
                 error = {!!errors.password}
                 helperText={errors.password}
+                size = "small"
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
