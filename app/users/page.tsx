@@ -349,7 +349,7 @@ export default function EnhancedTable() {
                       <Stack direction="row" spacing={1}>
                         {row.chip.map((chip_data, chip_key) => {
                           return (
-                            <Chip label={chip_data} color="primary" />
+                            <Chip key={chip_key} label={chip_data} color="primary" />
                           )
                         })}
                       </Stack>

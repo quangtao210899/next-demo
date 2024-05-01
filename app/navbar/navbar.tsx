@@ -9,7 +9,7 @@ import Menu from '@mui/material/Menu';
 import Image from "next/image";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { usePathname } from 'next/navigation'
-
+import Link from 'next/link';
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
@@ -85,21 +85,23 @@ export default function NavBar() {
       </MenuItem>
     </Menu>
   );
-  const pathname = usePathname() 
+  const pathname = usePathname()
   const isLogin = (pathname === "/login")
-  if (!isLogin){
+  if (!isLogin) {
     return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" sx={{ backgroundColor: '#555' }}>
           <Toolbar>
-            <Image
-              src="/logo2.png"
-              alt="Logo C3B"
-              width={50}
-              height={50}
-              priority
-              style={{ padding: "0px" }}
-            />
+            <Link href="/portal">
+              <Image
+                src="/logo2.png"
+                alt="Logo C3B"
+                width={50}
+                height={50}
+                priority
+                style={{ padding: "0px" }}
+              />
+            </Link>
             <Box sx={{ flexGrow: 1 }} />
             <Box>
               <IconButton
@@ -108,7 +110,7 @@ export default function NavBar() {
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
-                sx={{'& .MuiSvgIcon-root': { fontSize: '36px' } }}
+                sx={{ '& .MuiSvgIcon-root': { fontSize: '36px' } }}
                 color="inherit">
                 <AccountCircle />
               </IconButton>
