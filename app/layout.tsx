@@ -27,13 +27,13 @@ export default function RootLayout({
           href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
         />
         <link rel='apple-touch-icon' sizes='180x180' href='/images/apple-touch-icon.png' />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel='shortcut icon' href='/images/favicon.png' />
       </head>
       <body className={inter.className}>
         <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative', backgroundColor: "#EEE" }}>
           <NavBar />
           <Container>
-            {/* <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} /> */}
             {children}
           </Container>
         </Box>
