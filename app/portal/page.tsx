@@ -46,7 +46,7 @@ const portal = () => {
         </Typography>
       </Box>
 
-      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 4, sm: 6, md: 6 }} columns={{ xs: 2, sm: 8, md: 12 }} sx={{ mb: 2 }}>
+      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 3, sm: 6, md: 9 }} columns={{ xs: 2, sm: 8, md: 12 }} sx={{ mb: 2 }}>
         <Grid item xs={2} sm={4} md={4}>
           <Link href="/users" sx={{ textDecoration: 'none' }}>
             <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
