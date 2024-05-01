@@ -108,7 +108,7 @@ export default function NavBar() {
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
-                sx={{ padding: '0px 8px 0px 0px', '& .MuiSvgIcon-root': { fontSize: '36px' } }}
+                sx={{'& .MuiSvgIcon-root': { fontSize: '36px' } }}
                 color="inherit">
                 <AccountCircle />
               </IconButton>
