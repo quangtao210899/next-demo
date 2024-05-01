@@ -98,7 +98,7 @@ export default function NavBar() {
               width={50}
               height={50}
               priority
-              style={{ margin: '0px' }}
+              style={{ padding: "0px" }}
             />
             <Box sx={{ flexGrow: 1 }} />
             <Box>
@@ -108,7 +108,7 @@ export default function NavBar() {
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
-                sx={{ padding: '8px', '& .MuiSvgIcon-root': { fontSize: '36px' } }}
+                sx={{ padding: '0px 8px 0px 0px', '& .MuiSvgIcon-root': { fontSize: '36px' } }}
                 color="inherit">
                 <AccountCircle />
               </IconButton>
