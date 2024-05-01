@@ -1,4 +1,6 @@
 -Theme: học cách thêm vào project
+-Tìm extension đo kích thước màn hình
+-Router
 
 -Autocomplete => select
     +Customized hook, Multiple , Checkboxes: multi select
@@ -9,10 +11,28 @@
 -Checkbox
     +FormGroup
 -Radio
--Rating (vote sao)
+-Rating (vote sao, chức năng cần)
 -sliders (kéo thả thanh âm lượng)
 -Switch (toggle)
 -Textfield:
     +icons
     +Input Adornments
 -Transfer List: danh sách chuyển nhượng (chức năng cần)
+-Toggle button
+-Avatar:
+    +Grouped
+    +With badge
+-Badge (tạo huy hiệu nhỏ trên icon)
+-Chip (giống badge thông thường)
+-Divider: Đường kẻ mỏng
+-Icons + Material Icons
+-List: giống <ul>
+-Table
+-Tooltip
+-Typography: Có thể sử dụng kết hợp với theme (như thẻ <p>)
+-Alert (chưa thấy cảnh báo tự động ngắt)
+-Backdrop: Tạo hiệu ứng loading
+-Dialog: modal
+-Progress: icon loading
+-Skeleton: hiển thị trước dữ liệu để chờ trong thời gian tải
+-Snackbar: hiển thị thông báo trong 1 thời gian rồi tắt (hơi xấu :D)
