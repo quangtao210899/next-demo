@@ -1,6 +1,5 @@
 "use client"
 import * as React from 'react';
-import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Table from '@mui/material/Table';
@@ -13,13 +12,55 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { styled } from '@mui/material/styles';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+// search input
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: '#D9D9D9',
+  borderColor: '#D9D9D9',
+  borderWidth: "1px",
+  borderStyle: 'solid',
+  '&:hover, :active': {
+    borderColor: 'rgba(0, 0, 0, 0.87)',
+  },
+  marginRight: 0,
+  marginLeft: 0,
+  width: '50%',
+  [theme.breakpoints.up('sm')]: {
+    width: '50%',
+  },
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      // width: '20ch',
+    },
+  },
+}));
+
 
 interface Data {
   id: number;
@@ -250,7 +291,7 @@ export default function EnhancedTable() {
           ユーザー一覧
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "110px",'&:hover': {backgroundColor: "#5b8e9f"}}}>
+          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "110px", '&:hover': { backgroundColor: "#5b8e9f" } }}>
             <Typography
               sx={{
                 fontSize: '16px !important',
@@ -262,7 +303,7 @@ export default function EnhancedTable() {
               新規追加
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ backgroundColor: "#7B7979",width: "110px",'&:hover': {backgroundColor: "#6E6C6C"}}} disabled>
+          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }}>
             <Typography
               sx={{
                 fontSize: '16px !important',
@@ -277,8 +318,15 @@ export default function EnhancedTable() {
         </Stack>
       </Grid>
       <Box>
-
-        <h1>123</h1>
+        <Search sx={{mb:2}}>
+          <SearchIconWrapper>
+            <SearchIcon sx={{color: '#68A7B9'}}/>
+          </SearchIconWrapper>
+          <StyledInputBase
+            // placeholder="Search…"
+            inputProps={{ 'aria-label': 'search' }}
+          />
+        </Search>
       </Box>
 
       <Paper sx={{ width: '100%', mb: 2 }}>
