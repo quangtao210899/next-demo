@@ -2,28 +2,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
-import Table from '@mui/material/Table';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
+import Link from 'next/link'
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
-import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import TextField from "@mui/material/TextField";
+import Divider from '@mui/material/Divider';
 // multi select start
 import { Theme, useTheme } from '@mui/material/styles';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -113,7 +98,7 @@ const createUser = () => {
         <form autoComplete='off'>
           <FormGrid item xs={12} md={6}>
             <TextField
-              id="outlined-basic"
+              id="outlined-basic-1"
               variant="outlined"
               margin="dense"
               size="small"
@@ -132,7 +117,7 @@ const createUser = () => {
           </FormGrid>
           <FormGrid item xs={12} md={6} sx={{ mt: 3 }}>
             <TextField
-              id="outlined-basic"
+              id="outlined-basic-2"
               variant="outlined"
               margin="dense"
               size="small"
@@ -151,7 +136,7 @@ const createUser = () => {
           </FormGrid>
           <FormGrid item xs={12} md={6} sx={{ mt: 3 }}>
             <TextField
-              id="outlined-basic"
+              id="outlined-basic-3"
               variant="outlined"
               margin="dense"
               size="small"
@@ -170,7 +155,7 @@ const createUser = () => {
           </FormGrid>
           <FormGrid item xs={12} md={6} sx={{ mt: 3 }}>
             <TextField
-              id="outlined-basic"
+              id="outlined-basic-4"
               variant="outlined"
               margin="dense"
               size="small"
@@ -187,7 +172,7 @@ const createUser = () => {
             // helperText={errors.username}
             />
           </FormGrid>
-          <FormControl sx={{ width: '100%', mt: 3 }}>
+          <FormControl sx={{ width: '100%', mt: 3, mb: 3 }}>
             <InputLabel id="demo-multiple-chip-label">
               <Typography sx={{ fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" }}>
                 ジョブ
@@ -226,6 +211,34 @@ const createUser = () => {
               ))}
             </Select>
           </FormControl>
+          <Divider sx={{ mt: 5, borderColor: "#68A7B9", borderWidth: '1px', mb: 5 }} />
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+            <Button variant="contained" sx={{ mr: 2, backgroundColor: "#7B7979", width: "130px", '&:hover': { backgroundColor: "#6E6C6C" } }}
+              LinkComponent={Link} href="/users">
+              <Typography
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: "#FFFFFF",
+                  fontFamily: "Noto Sans JP",
+                }}
+              >
+                キャンセル
+              </Typography>
+            </Button>
+            <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "130px", '&:hover': { backgroundColor: "#5b8e9f" } }}>
+              <Typography
+                sx={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: "#FFFFFF",
+                  fontFamily: "Noto Sans JP",
+                }}
+              >
+                新規追加
+              </Typography>
+            </Button>
+          </Box>
         </form>
       </Grid>
     </Box>
