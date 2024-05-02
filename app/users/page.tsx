@@ -18,6 +18,11 @@ import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 // search input
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -221,7 +226,13 @@ export default function EnhancedTable() {
   const [selected, setSelected] = React.useState<readonly number[]>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  const [openModal, setOpenModal] = React.useState(false);
+  const handleClickOpenModal = () => {
+    setOpenModal(true);
+  };
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       const newSelected = rows.map((n) => n.id);
@@ -309,7 +320,7 @@ export default function EnhancedTable() {
               新規追加
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }} disabled={selected.length? false: true}>
+          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }} disabled={selected.length ? false : true} onClick={handleClickOpenModal}>
             <Typography
               sx={{
                 fontSize: '16px !important',
@@ -448,6 +459,69 @@ export default function EnhancedTable() {
           }}
         />
       </Paper>
+      <Dialog
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        maxWidth='sm'
+        fullWidth={true}
+        sx={{
+          '& .MuiDialog-paper': {
+            top: '-20%'
+          },
+        }}
+      >
+        <DialogTitle id="alert-dialog-title" sx={{
+          fontSize: '24px',
+          fontWeight: '700',
+          color: "#68A7B9",
+          lineHeight: "14.52px",
+          fontFamily: "Inter",
+          mb: 4,
+          mt: 3
+        }}>
+          {"選択した項目を削除"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description" sx={{
+            fontSize: '16px',
+            fontWeight: '400',
+            color: "#797979",
+            lineHeight: "9.68px",
+            fontFamily: "Inter",
+            textAlign: "center",
+          }}>
+            本当に削除しますか
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions sx={{ justifyContent: 'center', margin: 0,mb: 3 }}>
+          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "130px", '&:hover': { backgroundColor: "#6E6C6C" } }} onClick={handleCloseModal}>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                fontWeight: '700',
+                color: "#FFFFFF",
+                fontFamily: "Noto Sans JP",
+              }}
+            >
+              キャンセル
+            </Typography>
+          </Button>
+          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "130px", '&:hover': { backgroundColor: "#5b8e9f" } }} onClick={handleCloseModal}>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                fontWeight: '700',
+                color: "#FFFFFF",
+                fontFamily: "Noto Sans JP",
+              }}
+            >
+              削除する
+            </Typography>
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }
