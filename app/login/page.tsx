@@ -118,6 +118,11 @@ const LoginPage = () => {
                   onChange={handleChange('username')}
                   error = {!!errors.username}
                   helperText={errors.username}
+                  sx={{
+                    '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
+                      borderColor: '#68A7B9', // Đặt màu viền khi focus
+                    },
+                  }}
               />
             </FormGrid>
             <FormGrid item xs={12} md={6} mt={2}>
@@ -153,6 +158,11 @@ const LoginPage = () => {
                   )
                 }}
                 required
+                sx={{
+                  '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#68A7B9', // Đặt màu viền khi focus
+                  },
+                }}
               />
             </FormGrid>
             <Box
