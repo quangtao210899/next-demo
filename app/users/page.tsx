@@ -306,7 +306,7 @@ export default function EnhancedTable() {
               新規追加
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }}>
+          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }} disabled={selected.length? false: true}>
             <Typography
               sx={{
                 fontSize: '16px !important',
