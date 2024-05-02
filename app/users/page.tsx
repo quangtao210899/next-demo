@@ -18,7 +18,6 @@ import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
-import { pink } from '@mui/material/colors';
 // search input
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,14 +49,15 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
+  width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: '100%',
+    width: '100% !important',
     [theme.breakpoints.up('md')]: {
-      // width: '20ch',
+      width: '100% !important',
     },
   },
 }));
