@@ -185,8 +185,8 @@ const createUser = () => {
             />
           </FormGrid>
           {/* start multi select */}
-          <Autocomplete 
-            sx={{mt:3, mb:3}}
+          <Autocomplete
+            sx={{ mt: 3, mb: 3 }}
             multiple
             size="medium"
             id="checkboxes-tags-demo"
@@ -204,15 +204,30 @@ const createUser = () => {
                   checkedIcon={checkedIcon}
                   style={{ marginRight: 8 }}
                   checked={selected}
+                  sx={{
+                    color: '#68A7B9',
+                    '&.Mui-checked': {
+                      color: '#68A7B9',
+                    },
+                  }}
                 />
-                {option.title}
+                <Typography
+                  sx={{
+                    fontSize: '16px',
+                    fontWeight: '400',
+                    color: "#797979",
+                    fontFamily: "Noto Sans JP",
+                  }}
+                >
+                  {option.title}
+                </Typography>
               </li>
             )}
             style={{ width: '100%' }}
             renderInput={(params) => (
-              <TextField {...params} placeholder={selectedOptions.length ?"": "ジョブ"} sx={{
-                fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" 
-              }}/>
+              <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{
+                fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP"
+              }} />
             )}
           />
           {/* end multi select */}
