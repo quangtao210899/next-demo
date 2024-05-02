@@ -59,8 +59,6 @@ const FormGrid = styled(Grid)(() => ({
 const createUser = () => {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState<string[]>([]);
-  const placeholderColor = theme.palette.text.disabled;
-  console.log(placeholderColor); // Màu của placeholder
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const {
