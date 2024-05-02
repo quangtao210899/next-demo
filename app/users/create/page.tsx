@@ -1,7 +1,6 @@
 "use client"
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Link from 'next/link'
@@ -10,64 +9,78 @@ import { styled } from '@mui/material/styles';
 import TextField from "@mui/material/TextField";
 import Divider from '@mui/material/Divider';
 // multi select start
-import { Theme, useTheme } from '@mui/material/styles';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
+import Checkbox from '@mui/material/Checkbox';
+import Autocomplete from '@mui/material/Autocomplete';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
+const top100Films = [
+  { title: 'The Shawshank Redemption', year: 1994 },
+  { title: 'The Godfather', year: 1972 },
+  { title: 'The Godfather: Part II', year: 1974 },
+  { title: 'The Dark Knight', year: 2008 },
+  { title: '12 Angry Men', year: 1957 },
+  { title: "Schindler's List", year: 1993 },
+  { title: 'Pulp Fiction', year: 1994 },
+  {
+    title: 'The Lord of the Rings: The Return of the King',
+    year: 2003,
   },
-};
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
+  { title: 'The Good, the Bad and the Ugly', year: 1966 },
+  { title: 'Fight Club', year: 1999 },
+  {
+    title: 'The Lord of the Rings: The Fellowship of the Ring',
+    year: 2001,
+  },
+  {
+    title: 'Star Wars: Episode V - The Empire Strikes Back',
+    year: 1980,
+  },
+  { title: 'Forrest Gump', year: 1994 },
+  { title: 'Inception', year: 2010 },
+  {
+    title: 'The Lord of the Rings: The Two Towers',
+    year: 2002,
+  },
+  { title: "One Flew Over the Cuckoo's Nest", year: 1975 },
+  { title: 'Goodfellas', year: 1990 },
+  { title: 'The Matrix', year: 1999 },
+  { title: 'Seven Samurai', year: 1954 },
+  {
+    title: 'Star Wars: Episode IV - A New Hope',
+    year: 1977,
+  },
+  { title: 'City of God', year: 2002 },
+  { title: 'Se7en', year: 1995 },
+  { title: 'The Silence of the Lambs', year: 1991 },
+  { title: "It's a Wonderful Life", year: 1946 },
+  { title: 'Life Is Beautiful', year: 1997 },
+  { title: 'The Usual Suspects', year: 1995 },
+  { title: 'Léon: The Professional', year: 1994 },
+  { title: 'Spirited Away', year: 2001 },
+  { title: 'Saving Private Ryan', year: 1998 },
+  { title: 'Once Upon a Time in the West', year: 1968 },
+  { title: 'American History X', year: 1998 },
+  { title: 'Interstellar', year: 2014 },
 ];
-
-function getStyles(name: string, personName: readonly string[], theme: Theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
-
 // multi select end
-
-
 const FormGrid = styled(Grid)(() => ({
   display: 'flex',
   flexDirection: 'column',
 }));
 
 const createUser = () => {
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState<string[]>([]);
+  const [inputValue, setInputValue] = useState<string>('');
+  const [selectedOptions, setSelectedOptions] = useState<any[]>([]);
 
-  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+  const handleInputChange = (event: React.ChangeEvent<{}>, newInputValue: string) => {
+    setInputValue(newInputValue);
+  };
+
+  const handleChange = (event: React.SyntheticEvent, newValue: any[]) => {
+    setSelectedOptions(newValue);
   };
   return (
     <Box sx={{ width: '100%' }}>
@@ -171,50 +184,38 @@ const createUser = () => {
             // helperText={errors.username}
             />
           </FormGrid>
-          <FormControl sx={{ width: '100%', mt: 3, mb: 3, borderColor: 'red' }}>
-            <InputLabel id="demo-multiple-chip-label">
-              <Typography sx={{ fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP", color: "rgba(0, 0, 0, 0.38)" }}>
-                ジョブ
-              </Typography>
-            </InputLabel>
-            <Select
-              multiple
-              value={personName}
-              onChange={handleChange}
-              input={<OutlinedInput id="select-multiple-chip"
-                sx={{
-                  '&:not(.Mui-disabled):hover::before': {
-                    borderColor: '#68A7B9',
-                  },
-                  '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#68A7B9', // Đặt màu viền khi focus
-                  },
-                }}
-              />}
-              renderValue={(selected) => (
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                  {selected.map((value) => (
-                    <Chip key={value} label={value} color="primary"
-                      sx={{ fontSize: "14px", fontFamily: "Noto Sans JP", fontWeight: "700", backgroundColor: "#68A7B9" }} />
-                  ))}
-                </Box>
-              )}
-              MenuProps={MenuProps}
-            >
-              <MenuItem disabled value="">
-                <em>ジョブ</em>
-              </MenuItem>
-              {names.map((name) => (
-                <MenuItem
-                  key={name}
-                  value={name}
-                  style={getStyles(name, personName, theme)}
-                >
-                  {name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+          {/* start multi select */}
+          <Autocomplete 
+            sx={{mt:3, mb:3}}
+            multiple
+            size="medium"
+            id="checkboxes-tags-demo"
+            options={top100Films}
+            inputValue={inputValue}
+            onInputChange={handleInputChange}
+            value={selectedOptions}
+            onChange={handleChange}
+            disableCloseOnSelect
+            getOptionLabel={(option) => option.title}
+            renderOption={(props, option, { selected }) => (
+              <li {...props}>
+                <Checkbox
+                  icon={icon}
+                  checkedIcon={checkedIcon}
+                  style={{ marginRight: 8 }}
+                  checked={selected}
+                />
+                {option.title}
+              </li>
+            )}
+            style={{ width: '100%' }}
+            renderInput={(params) => (
+              <TextField {...params} placeholder={selectedOptions.length ?"": "ジョブ"} sx={{
+                fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" 
+              }}/>
+            )}
+          />
+          {/* end multi select */}
 
           <Divider sx={{ mt: 5, borderColor: "#68A7B9", borderWidth: '1px', mb: 5 }} />
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
