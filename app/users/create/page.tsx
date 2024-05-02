@@ -171,7 +171,7 @@ const createUser = () => {
             // helperText={errors.username}
             />
           </FormGrid>
-          <FormControl sx={{ width: '100%', mt: 3, mb: 3 }}>
+          <FormControl sx={{ width: '100%', mt: 3, mb: 3, borderColor: 'red' }}>
             <InputLabel id="demo-multiple-chip-label">
               <Typography sx={{ fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP", color: "rgba(0, 0, 0, 0.38)" }}>
                 ジョブ
@@ -189,7 +189,8 @@ const createUser = () => {
                   '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
                     borderColor: '#68A7B9', // Đặt màu viền khi focus
                   },
-                }} />}
+                }}
+              />}
               renderValue={(selected) => (
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                   {selected.map((value) => (
