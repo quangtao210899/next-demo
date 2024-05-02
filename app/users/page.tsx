@@ -355,7 +355,7 @@ export default function EnhancedTable() {
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ cursor: 'pointer'}}
+                    sx={{ cursor: 'pointer' }}
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -364,7 +364,12 @@ export default function EnhancedTable() {
                         inputProps={{
                           'aria-labelledby': labelId,
                         }}
-                        sx={{ color: "#68A7B9" }}
+                        sx={{
+                          color: '#68A7B9',
+                          '&.Mui-checked': {
+                            color: '#68A7B9',
+                          },
+                        }}
                       />
                     </TableCell>
                     <TableCell
@@ -384,7 +389,7 @@ export default function EnhancedTable() {
                         {row.name}
                       </Typography>
                     </TableCell>
-                    <TableCell align="left" sx={{padding:'0px'}}>
+                    <TableCell align="left" sx={{ padding: '0px' }}>
                       <Stack direction="row" spacing={1}>
                         {row.jobs.map((job_data, job_key) => {
                           return (
@@ -428,6 +433,13 @@ export default function EnhancedTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          sx={{
+            fontSize: '16px',
+            fontWeight: '400',
+            color: "#6D6D6D",
+            lineHeight: "11.58px",
+            fontFamily: "Noto Sans JP",
+          }}
         />
       </Paper>
     </Box>
