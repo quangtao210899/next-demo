@@ -412,7 +412,7 @@ export default function EnhancedTable() {
                       <Stack direction="row" spacing={1}>
                         {row.jobs.map((job_data, job_key) => {
                           return (
-                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "10px", fontFamily: "Noto Sans JP", fontWeight: "700", backgroundColor: "#68A7B9BF" }} />
+                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "10px", fontFamily: "Noto Sans JP", fontWeight: "700", backgroundColor: "#68A7B9" }} />
                           )
                         })}
                       </Stack>
