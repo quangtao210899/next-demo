@@ -56,10 +56,11 @@ const FormGrid = styled(Grid)(() => ({
   flexDirection: 'column',
 }));
 
-
 const createUser = () => {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState<string[]>([]);
+  const placeholderColor = theme.palette.text.disabled;
+  console.log(placeholderColor); // Màu của placeholder
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const {
@@ -174,7 +175,7 @@ const createUser = () => {
           </FormGrid>
           <FormControl sx={{ width: '100%', mt: 3, mb: 3 }}>
             <InputLabel id="demo-multiple-chip-label">
-              <Typography sx={{ fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" }}>
+              <Typography sx={{ fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP", color: "rgba(0, 0, 0, 0.38)" }}>
                 ジョブ
               </Typography>
             </InputLabel>
@@ -182,11 +183,15 @@ const createUser = () => {
               multiple
               value={personName}
               onChange={handleChange}
-              input={<OutlinedInput id="select-multiple-chip" label="Chip" sx={{
-                '&.Mui-focused fieldset': {
-                  borderColor: 'green', // Thay đổi màu border khi focus
-                }
-              }} />}
+              input={<OutlinedInput id="select-multiple-chip"
+                sx={{
+                  '&:not(.Mui-disabled):hover::before': {
+                    borderColor: '#68A7B9',
+                  },
+                  '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#68A7B9', // Đặt màu viền khi focus
+                  },
+                }} />}
               renderValue={(selected) => (
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                   {selected.map((value) => (
@@ -211,6 +216,7 @@ const createUser = () => {
               ))}
             </Select>
           </FormControl>
+
           <Divider sx={{ mt: 5, borderColor: "#68A7B9", borderWidth: '1px', mb: 5 }} />
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <Button variant="contained" sx={{ mr: 2, backgroundColor: "#7B7979", width: "130px", '&:hover': { backgroundColor: "#6E6C6C" } }}
