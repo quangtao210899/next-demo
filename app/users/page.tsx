@@ -23,6 +23,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Link from 'next/link'
 // search input
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -308,7 +309,8 @@ export default function EnhancedTable() {
           ユーザー一覧
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "110px", '&:hover': { backgroundColor: "#5b8e9f" } }}>
+          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "110px", '&:hover': { backgroundColor: "#5b8e9f" } }} 
+            LinkComponent={Link} href="/users/create">
             <Typography
               sx={{
                 fontSize: '16px !important',
