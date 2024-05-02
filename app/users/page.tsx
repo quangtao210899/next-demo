@@ -2,10 +2,11 @@
 import * as React from 'react';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Chip from '@mui/material/Chip';
 import Table from '@mui/material/Table';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -77,7 +78,7 @@ function getComparator<Key extends keyof any>(
   orderBy: Key,
 ): (
   a: { [key in Key]: number | string | Array<string> },
-  b: { [key in Key]: number | string | Array<string>},
+  b: { [key in Key]: number | string | Array<string> },
 ) => number {
   return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
@@ -167,53 +168,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   );
 }
 
-interface EnhancedTableToolbarProps {
-  numSelected: number;
-}
-
-function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
-  const { numSelected } = props;
-
-  return (
-    <Toolbar
-      sx={{
-        pl: { sm: 2 },
-        pr: { xs: 1, sm: 1 },
-        ...(numSelected > 0 && {
-          bgcolor: (theme) =>
-            alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
-        }),
-      }}
-    >
-      {numSelected > 0 ? (
-        <Typography
-          sx={{ flex: '1 1 100%' }}
-          color="inherit"
-          variant="subtitle1"
-          component="div"
-        >
-          {numSelected} selected
-        </Typography>
-      ) : (
-        <Typography
-          sx={{ flex: '1 1 100%' }}
-          variant="h6"
-          id="tableTitle"
-          component="div"
-        >
-          Nutrition
-        </Typography>
-      )}
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : (<div></div>)}
-    </Toolbar>
-  );
-}
 export default function EnhancedTable() {
   const [order, setOrder] = React.useState<Order>('asc');
   const [orderBy, setOrderBy] = React.useState<keyof Data>('calories');
@@ -281,7 +235,8 @@ export default function EnhancedTable() {
         justifyContent="space-between"
         alignItems="baseline"
         sx={{
-          mt: 2
+          mt: 2,
+          mb: 1,
         }}
       >
         <Typography
@@ -294,11 +249,39 @@ export default function EnhancedTable() {
         >
           ユーザー一覧
         </Typography>
-        {/* <h1>Chào</h1> */}
+        <Stack direction="row" spacing={2}>
+          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "110px",'&:hover': {backgroundColor: "#5b8e9f"}}}>
+            <Typography
+              sx={{
+                fontSize: '16px !important',
+                fontWeight: '700 !important',
+                color: "#FFFFFF",
+                fontFamily: "Noto Sans JP",
+              }}
+            >
+              新規追加
+            </Typography>
+          </Button>
+          <Button variant="contained" sx={{ backgroundColor: "#7B7979",width: "110px",'&:hover': {backgroundColor: "#6E6C6C"}}} disabled>
+            <Typography
+              sx={{
+                fontSize: '16px !important',
+                fontWeight: '700 !important',
+                color: "#FFFFFF",
+                fontFamily: "Noto Sans JP",
+              }}
+            >
+              削除
+            </Typography>
+          </Button>
+        </Stack>
       </Grid>
+      <Box>
+
+        <h1>123</h1>
+      </Box>
 
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -353,7 +336,7 @@ export default function EnhancedTable() {
                           )
                         })}
                       </Stack>
-                      </TableCell>
+                    </TableCell>
                   </TableRow>
                 );
               })}
