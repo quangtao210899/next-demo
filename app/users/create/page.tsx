@@ -186,7 +186,9 @@ const createUser = () => {
           </FormGrid>
           {/* start multi select */}
           <Autocomplete
-            sx={{ mt: 3, mb: 3 }}
+            sx={{
+              mt: 3, mb: 3
+            }}
             multiple
             size="medium"
             id="checkboxes-tags-demo"
