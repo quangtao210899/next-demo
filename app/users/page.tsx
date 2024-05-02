@@ -26,8 +26,8 @@ const Search = styled('div')(({ theme }) => ({
   borderColor: '#D9D9D9',
   borderWidth: "1px",
   borderStyle: 'solid',
-  '&:hover, :active': {
-    borderColor: 'rgba(0, 0, 0, 0.87)',
+  '&:hover': {
+    borderColor: '#68A7B9',
   },
   marginRight: 0,
   marginLeft: 0,
@@ -59,6 +59,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
       width: '100% !important',
     },
+  },
+  '&:focus': {
+    borderColor: '#68A7B9'
   },
 }));
 
