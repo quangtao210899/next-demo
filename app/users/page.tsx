@@ -190,6 +190,9 @@ function EnhancedTableHead(props: EnhancedTableProps) {
               '&.Mui-checked': {
                 color: 'white',
               },
+              '&.MuiCheckbox-indeterminate': {
+                color: 'white',
+              }
             }}
           />
         </TableCell>
