@@ -32,7 +32,7 @@ const Search = styled('div')(({ theme }) => ({
   },
   marginRight: 0,
   marginLeft: 0,
-  width: '50%',
+  width: '100%',
   [theme.breakpoints.up('sm')]: {
     width: '50%',
   },
