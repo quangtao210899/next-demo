@@ -18,6 +18,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+import { pink } from '@mui/material/colors';
 // search input
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,43 +64,40 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 interface Data {
-  id: number;
-  name: string;
-  calories: number;
-  fat: number;
-  chip: Array<string>;
+  id: number,
+  name: string,
+  jobs: Array<string>,
+  created_at: string,
 }
 
 function createData(
   id: number,
   name: string,
-  calories: number,
-  fat: number,
-  chip: Array<string>,
+  jobs: Array<string>,
+  created_at: string,
 ): Data {
   return {
     id,
     name,
-    calories,
-    fat,
-    chip,
+    jobs,
+    created_at,
   };
 }
 
 const rows = [
-  createData(1, 'Cupcake', 305, 3.7, ["user1", "user2"]),
-  createData(2, 'Donut', 452, 25.0, ["user1", "user2"]),
-  createData(3, 'Eclair', 262, 16.0, ["user1", "user2"]),
-  createData(4, 'Frozen yoghurt', 159, 6.0, ["user1", "user2"]),
-  createData(5, 'Gingerbread', 356, 16.0, ["user1", "user2"]),
-  createData(6, 'Honeycomb', 408, 3.2, ["user1", "user2"]),
-  createData(7, 'Ice cream sandwich', 237, 9.0, ["user1", "user2"]),
-  createData(8, 'Jelly Bean', 375, 0.0, ["user1", "user2"]),
-  createData(9, 'KitKat', 518, 26.0, ["user1", "user2"]),
-  createData(10, 'Lollipop', 392, 0.2, ["user1", "user2"]),
-  createData(11, 'Marshmallow', 318, 0, ["user1", "user2"]),
-  createData(12, 'Nougat', 360, 19.0, ["user1", "user2"]),
-  createData(13, 'Oreo', 437, 18.0, ["user1", "user2"]),
+  createData(1, 'User 1', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(2, 'User 2', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(3, 'User 3', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(4, 'User 4', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(5, 'User 5', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(6, 'User 6', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(7, 'User 7', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(8, 'User 8', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(9, 'User 8', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(10, 'User 10', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(11, 'User 11', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(12, 'User 12', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(13, 'User 13', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -150,25 +148,19 @@ const headCells: readonly HeadCell[] = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Dessert (100g serving)',
+    label: 'ユーザー名',
   },
   {
-    id: 'calories',
-    numeric: true,
-    disablePadding: false,
-    label: 'Calories',
-  },
-  {
-    id: 'fat',
-    numeric: true,
-    disablePadding: false,
-    label: 'Fat (g)',
-  },
-  {
-    id: 'chip',
+    id: 'jobs',
     numeric: false,
     disablePadding: false,
-    label: 'Chip',
+    label: 'ジョブ',
+  },
+  {
+    id: 'created_at',
+    numeric: true,
+    disablePadding: false,
+    label: '登録日時',
   }
 ];
 
@@ -182,7 +174,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   const { onSelectAllClick, numSelected, rowCount } = props;
 
   return (
-    <TableHead>
+    <TableHead sx={{ backgroundColor: "#68A7B9" }}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -193,6 +185,12 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             inputProps={{
               'aria-label': 'select all desserts',
             }}
+            sx={{
+              color: 'white',
+              '&.Mui-checked': {
+                color: 'white',
+              },
+            }}
           />
         </TableCell>
         {headCells.map((headCell) => (
@@ -200,6 +198,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
+            sx={{ color: '#FFFFFF', fontSize: '16px', fontWeight: '700', lineHeight: '11.58px' }}
+            size='small'
           >
             {headCell.label}
           </TableCell>
@@ -211,7 +211,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
 export default function EnhancedTable() {
   const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof Data>('calories');
+  const [orderBy, setOrderBy] = React.useState<keyof Data>('name');
   const [selected, setSelected] = React.useState<readonly number[]>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -318,9 +318,9 @@ export default function EnhancedTable() {
         </Stack>
       </Grid>
       <Box>
-        <Search sx={{mb:2}}>
+        <Search sx={{ mb: 2 }}>
           <SearchIconWrapper>
-            <SearchIcon sx={{color: '#68A7B9'}}/>
+            <SearchIcon sx={{ color: '#68A7B9' }} />
           </SearchIconWrapper>
           <StyledInputBase
             // placeholder="Search…"
@@ -355,7 +355,7 @@ export default function EnhancedTable() {
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
+                    sx={{ cursor: 'pointer'}}
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -364,6 +364,7 @@ export default function EnhancedTable() {
                         inputProps={{
                           'aria-labelledby': labelId,
                         }}
+                        sx={{ color: "#68A7B9" }}
                       />
                     </TableCell>
                     <TableCell
@@ -372,18 +373,37 @@ export default function EnhancedTable() {
                       scope="row"
                       padding="none"
                     >
-                      {row.name}
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: '400',
+                          color: "#797979",
+                          fontFamily: "Noto Sans JP",
+                        }}
+                      >
+                        {row.name}
+                      </Typography>
                     </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="left">
+                    <TableCell align="left" sx={{padding:'0px'}}>
                       <Stack direction="row" spacing={1}>
-                        {row.chip.map((chip_data, chip_key) => {
+                        {row.jobs.map((job_data, job_key) => {
                           return (
-                            <Chip key={chip_key} label={chip_data} color="primary" />
+                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "10px", fontFamily: "Noto Sans JP", fontWeight: "700", backgroundColor: "#68A7B9BF" }} />
                           )
                         })}
                       </Stack>
+                    </TableCell>
+                    <TableCell align="right">
+                      <Typography
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: '400',
+                          color: "#797979",
+                          fontFamily: "Noto Sans JP",
+                        }}
+                      >
+                        {row.created_at}
+                      </Typography>
                     </TableCell>
                   </TableRow>
                 );
