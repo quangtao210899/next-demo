@@ -2,6 +2,8 @@
 -Tìm extension đo kích thước màn hình (done)
 -Router
 -#68A7B9
+-fontWeight="bold"
+
 **not done
 -ô input seach user (B)
 -multi select create user (A)

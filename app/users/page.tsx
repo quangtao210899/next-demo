@@ -394,7 +394,7 @@ export default function EnhancedTable() {
                       <Stack direction="row" spacing={1}>
                         {row.jobs.map((job_data, job_key) => {
                           return (
-                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "10px", fontWeight: "700" }} />
+                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "12px", backgroundColor: "#68A7B9BF", fontWeight: "700" }} />
                           )
                         })}
                       </Stack>
@@ -479,7 +479,7 @@ export default function EnhancedTable() {
               キャンセル
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ width: "130px"}} color= "secondary" onClick={handleCloseModal}>
+          <Button variant="contained" sx={{ width: "130px" }} color="secondary" onClick={handleCloseModal}>
             <Typography
               sx={{
                 fontWeight: '700',
