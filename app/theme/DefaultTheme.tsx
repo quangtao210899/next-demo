@@ -16,6 +16,10 @@ const DefaultTheme = createTheme({
     fontSize: 16,
     fontWeightRegular: 400,
     fontWeightMedium: 700,
+    fontWeightBold: 900,
+    allVariants: {
+      color: "#68A7B9"
+    },
   },
 
 });

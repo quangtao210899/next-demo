@@ -87,51 +87,40 @@ const LoginPage = () => {
             <Typography
               sx={{
                 fontSize: '96px',
-                fontWeight: '900',
-                color: "#68A7B9",
-                lineHieght: "57.81px",
                 fontFamily: "Odor Mean Chey"
               }}
+              fontWeight="bold"
             >
               C3P
             </Typography>
           </Box>
           <form autoComplete='off'>
             <FormGrid item xs={12} md={6}>
-              <FormLabel htmlFor="username" 
+              <FormLabel htmlFor="username"
                 sx={{
                   fontSize: '15px',
-                  fontWeight: '400',
                   color: "#7B7979",
-                  lineHieght: "6.81px",
                   fontFamily: "Noto Sans"
                 }}
               >
                 ユーザーネーム
               </FormLabel>
               <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  margin="dense"
-                  size = "small"
-                  value={values.username}
-                  onChange={handleChange('username')}
-                  error = {!!errors.username}
-                  helperText={errors.username}
-                  sx={{
-                    '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
-                      borderColor: '#68A7B9', // Đặt màu viền khi focus
-                    },
-                  }}
+                id="outlined-basic"
+                variant="outlined"
+                margin="dense"
+                size="small"
+                value={values.username}
+                onChange={handleChange('username')}
+                error={!!errors.username}
+                helperText={errors.username}
               />
             </FormGrid>
             <FormGrid item xs={12} md={6} mt={2}>
               <FormLabel htmlFor="username"
                 sx={{
                   fontSize: '15px',
-                  fontWeight: '400',
                   color: "#7B7979",
-                  lineHieght: "6.81px",
                   fontFamily: "Noto Sans"
                 }}
               >
@@ -141,9 +130,9 @@ const LoginPage = () => {
                 value={values.password}
                 onChange={handleChange('password')}
                 type={values.showPassword ? 'text' : 'password'}
-                error = {!!errors.password}
+                error={!!errors.password}
                 helperText={errors.password}
-                size = "small"
+                size="small"
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -158,11 +147,6 @@ const LoginPage = () => {
                   )
                 }}
                 required
-                sx={{
-                  '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#68A7B9', // Đặt màu viền khi focus
-                  },
-                }}
               />
             </FormGrid>
             <Box
@@ -173,23 +157,18 @@ const LoginPage = () => {
               fullWidth
               size='large'
               variant='contained'
-              sx={{ 
+              sx={{
                 marginBottom: 2,
-                radius: "2px",
-                backgroundColor: "#68A7B9",
-                '&:hover': {
-                  backgroundColor: "#5b8e9f",
-                }
+                radius: "2px"
               }}
               onClick={handleSubmit}
             >
               サインイン
             </Button>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center'}}>
+            <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
               <Typography variant='body2' sx={{
                 fontSize: '0.875rem',
                 textDecoration: 'none',
-                color: "#68A7B9"
               }}>
                 <Link passHref href='/pages/register'>
                   パスワードをお忘れの場合はこちら
