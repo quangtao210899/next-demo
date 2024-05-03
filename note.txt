@@ -6,7 +6,8 @@
 
 **not done
 -ô input seach user (A, done)
--validate create/edit user (B)
+-validate create/edit (B)
+-loading when search (B)
 -pagination user (A, Done)
 -router (B)
 
