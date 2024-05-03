@@ -5,10 +5,10 @@
 -fontWeight="medium"
 
 **not done
--ô input seach user (B)
--validate create/edit user
--pagination user
--router
+-ô input seach user (A)
+-validate create/edit user (B)
+-pagination user (A)
+-router (B)
 
 -Autocomplete => select
     +Customized hook, Multiple , Checkboxes: multi select

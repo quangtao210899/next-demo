@@ -429,7 +429,11 @@ export default function EnhancedTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
-          sx={{ color: "#6D6D6D" }}
+          sx={{
+            "& .MuiTablePagination-displayedRows": {
+              color: "#6D6D6D"
+            }
+          }}
         />
       </Paper>
       <Dialog
