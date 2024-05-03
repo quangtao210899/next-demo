@@ -139,10 +139,10 @@ const editUser = () => {
         sx={{ mt: 2, mb: 1 }}
       >
         <Typography
-          sx={{ fontWeight: '700', }}
+          sx={{ fontSize: '24px' }}
           fontWeight="medium"
         >
-          ユーザー新規追加
+          ユーザー編集
         </Typography>
       </Grid>
       {/* form */}

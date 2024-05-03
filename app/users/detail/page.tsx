@@ -15,22 +15,20 @@ const detailUser = () => {
         direction="row"
         justifyContent="space-between"
         alignItems="baseline"
-        sx={{mt: 2, mb: 2,}}
+        sx={{ mt: 2, mb: 2, }}
       >
         <Typography
           sx={{
             fontSize: '24px',
-            fontWeight: '700',
           }}
           fontWeight="medium"
         >
-          ユーザー新規追加
+          ユーザー詳細
         </Typography>
         <Stack direction="row" spacing={2}>
           <Button variant="contained" color="secondary" sx={{ width: "110px" }} LinkComponent={Link} href="/users">
             <Typography
               sx={{
-                fontWeight: '700',
                 color: "#FFFFFF",
               }}
               fontWeight="medium"
@@ -38,12 +36,12 @@ const detailUser = () => {
               戻る
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ width: "110px" }}LinkComponent={Link} href="/users/edit">
+          <Button variant="contained" sx={{ width: "110px" }} LinkComponent={Link} href="/users/edit">
             <Typography
               sx={{
-                fontWeight: '700',
                 color: "#FFFFFF",
               }}
+              fontWeight="medium"
             >
               編集
             </Typography>
@@ -53,14 +51,14 @@ const detailUser = () => {
       <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 1, sm: 3, md: 4 }} columns={{ xs: 12, sm: 12, md: 12 }}>
         <Grid item xs={12} sm={3} md={3}>
           <Typography
-            sx={{fontSize: '20px'}}
+            sx={{ fontSize: '20px' }}
           >
             ユーザー名
           </Typography>
         </Grid>
         <Grid item xs={12} sm={9} md={9}>
           <Typography
-            sx={{fontSize: '20px', color: "#646464"}}
+            sx={{ fontSize: '20px', color: "#646464" }}
           >
             User
           </Typography>
@@ -69,14 +67,14 @@ const detailUser = () => {
 
         <Grid item xs={12} sm={3} md={3}>
           <Typography
-            sx={{fontSize: '20px'}}
+            sx={{ fontSize: '20px' }}
           >
             メールアドレス
           </Typography>
         </Grid>
         <Grid item xs={12} sm={9} md={9}>
           <Typography
-            sx={{fontSize: '20px', color: "#646464"}}
+            sx={{ fontSize: '20px', color: "#646464" }}
           >
             user@mail.adress
           </Typography>
@@ -85,14 +83,14 @@ const detailUser = () => {
 
         <Grid item xs={12} sm={3} md={3}>
           <Typography
-            sx={{fontSize: '20px'}}
+            sx={{ fontSize: '20px' }}
           >
             姓名
           </Typography>
         </Grid>
         <Grid item xs={12} sm={9} md={9}>
           <Typography
-            sx={{fontSize: '20px', color: "#646464"}}
+            sx={{ fontSize: '20px', color: "#646464" }}
           >
             ユーザー user ユーザー
           </Typography>
@@ -101,14 +99,14 @@ const detailUser = () => {
 
         <Grid item xs={12} sm={3} md={3}>
           <Typography
-            sx={{fontSize: '20px'}}
+            sx={{ fontSize: '20px' }}
           >
             所属
           </Typography>
         </Grid>
         <Grid item xs={12} sm={9} md={9}>
           <Typography
-            sx={{fontSize: '20px',color: "#646464"}}
+            sx={{ fontSize: '20px', color: "#646464" }}
           >
             部署
           </Typography>
@@ -116,22 +114,22 @@ const detailUser = () => {
 
 
         <Grid item xs={12} sm={3} md={3}>
-        <Typography
-            sx={{fontSize: '20px'}}
+          <Typography
+            sx={{ fontSize: '20px' }}
           >
             ジョブ
           </Typography>
         </Grid>
         <Grid item xs={12} sm={9} md={9}>
-        <Typography
-            sx={{fontSize: '20px',color: "#646464"}}
+          <Typography
+            sx={{ fontSize: '20px', color: "#646464" }}
           >
             ジョブ1, ジョブ2, ジョブ3, ジョブ4
           </Typography>
         </Grid>
 
       </Grid>
-    </Box>
+    </Box >
   )
 }
 

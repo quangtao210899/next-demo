@@ -491,9 +491,9 @@ export default function EnhancedTable() {
           <Button variant="contained" sx={{ width: "130px" }} onClick={handleCloseModal}>
             <Typography
               sx={{
-                fontWeight: '700',
                 color: "#FFFFFF",
               }}
+              fontWeight="medium"
             >
               キャンセル
             </Typography>
@@ -501,9 +501,9 @@ export default function EnhancedTable() {
           <Button variant="contained" sx={{ width: "130px" }} color="secondary" onClick={handleCloseModal}>
             <Typography
               sx={{
-                fontWeight: '700',
                 color: "#FFFFFF",
               }}
+              fontWeight="medium"
             >
               削除する
             </Typography>
