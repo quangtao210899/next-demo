@@ -20,7 +20,7 @@ const detailUser = () => {
         alignItems="baseline"
         sx={{
           mt: 2,
-          mb: 1,
+          mb: 2,
         }}
       >
         <Typography
@@ -62,12 +62,12 @@ const detailUser = () => {
           </Button>
         </Stack>
       </Grid>
-      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 3, sm: 6, md: 9 }} columns={{ xs: 12, sm: 12, md: 12 }} sx={{ mb: 2 }}>
+      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 1, sm: 3, md: 4 }} columns={{ xs: 12, sm: 12, md: 12 }}>
         <Grid item xs={12} sm={3} md={3}>
           <Typography
             sx={{
-              fontSize: '16px',
-              fontWeight: '700',
+              fontSize: '20px',
+              fontWeight: '400',
               color: "#68A7B9",
               fontFamily: "Noto Sans JP",
             }}
@@ -78,15 +78,120 @@ const detailUser = () => {
         <Grid item xs={12} sm={9} md={9}>
           <Typography
             sx={{
-              fontSize: '16px',
-              fontWeight: '700',
-              color: "#FFFFFF",
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#646464",
               fontFamily: "Noto Sans JP",
             }}
           >
-            編集
+            User
           </Typography>
         </Grid>
+
+
+        <Grid item xs={12} sm={3} md={3}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#68A7B9",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            メールアドレス
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={9} md={9}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#646464",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            user@mail.adress
+          </Typography>
+        </Grid>
+
+
+        <Grid item xs={12} sm={3} md={3}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#68A7B9",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            姓名
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={9} md={9}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#646464",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            ユーザー user ユーザー
+          </Typography>
+        </Grid>
+
+
+        <Grid item xs={12} sm={3} md={3}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#68A7B9",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            所属
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={9} md={9}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#646464",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            部署
+          </Typography>
+        </Grid>
+
+
+        <Grid item xs={12} sm={3} md={3}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#68A7B9",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            ジョブ
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={9} md={9}>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: "#646464",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            ジョブ1, ジョブ2, ジョブ3, ジョブ4
+          </Typography>
+        </Grid>
+
       </Grid>
     </Box>
   )
