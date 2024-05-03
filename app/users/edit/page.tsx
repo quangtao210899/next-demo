@@ -207,7 +207,7 @@ const editUser = () => {
           {/* start multi select */}
           <Autocomplete
             sx={{
-              mt: 3, mb: 3
+              mt: 1, mb: 3
             }}
             multiple
             size="small"

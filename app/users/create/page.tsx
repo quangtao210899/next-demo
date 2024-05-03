@@ -250,7 +250,7 @@ const createUser = () => {
               <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{ fontSize: '20px' }} />
             )}
             style={{ width: '100%' }}
-            sx={{ mt: 3, mb: 3, }}
+            sx={{ mt: 1, mb: 3, }}
           />
           {/* end multi select */}
 
