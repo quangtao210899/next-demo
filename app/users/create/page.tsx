@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import { ChangeEvent, useState } from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import TextField from "@mui/material/TextField";
 import Divider from '@mui/material/Divider';
+import ErrorTypography from "../../component/ErrorTypography"
+import { z } from 'zod';
+import { useRouter } from 'next/navigation';
 // multi select start
 import Checkbox from '@mui/material/Checkbox';
 import Chip from '@mui/material/Chip';
@@ -73,6 +76,50 @@ const FormGrid = styled(Grid)(() => ({
 }));
 
 const createUser = () => {
+  // start validate
+  interface State {
+    username: string,
+    email: string,
+    fullname: string,
+    department: string
+  }
+
+  const UserFormSchema = z.object({
+    username: z.string().min(1, 'ユーザー名は必須です'),
+    email: z.string().min(1, 'メールアドレスは必須です'),
+    fullname: z.string().min(1, '姓名は必須です'),
+    department: z.string().min(1, '所属は必須です'),
+  });
+  const [errors, setErrors] = useState<{ [key: string]: string | null }>({});
+  const [values, setValues] = useState<State>({
+    username: '',
+    email: '',
+    fullname: '',
+    department: ''
+  })
+  const router = useRouter()
+  const handleChange = (prop: keyof State) => (event: ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [prop]: event.target.value })
+  }
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      await UserFormSchema.parseAsync({ ...values });
+      console.log('Formis valid');
+      setErrors({});
+      router.push('/portal');
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const fieldErrors: { [key: string]: string | null } = {};
+        error.errors.forEach((err) => {
+          fieldErrors[err.path[0]] = err.message;
+        });
+        setErrors(fieldErrors);
+      }
+    }
+  };
+  // end validate
+
   const [inputValue, setInputValue] = useState<string>('');
   const [selectedOptions, setSelectedOptions] = useState<any[]>([]);
 
@@ -80,7 +127,7 @@ const createUser = () => {
     setInputValue(newInputValue);
   };
 
-  const handleChange = (event: React.SyntheticEvent, newValue: any[]) => {
+  const handleChangeSelect = (event: React.SyntheticEvent, newValue: any[]) => {
     setSelectedOptions(newValue);
   };
   return (
@@ -90,10 +137,10 @@ const createUser = () => {
         direction="row"
         justifyContent="space-between"
         alignItems="baseline"
-        sx={{mt: 2,mb: 1}}
+        sx={{ mt: 2, mb: 1 }}
       >
         <Typography
-          sx={{fontSize: '24px'}}
+          sx={{ fontSize: '24px' }}
           fontWeight="medium"
         >
           ユーザー新規追加
@@ -109,54 +156,54 @@ const createUser = () => {
               margin="dense"
               size="small"
               placeholder="ユーザー名"
-              inputProps={{ style: { fontSize: '20px'} }}
-            // value={values.username}
-            // onChange={handleChange('username')}
-            // error={!!errors.username}
-            // helperText={errors.username}
+              inputProps={{ style: { fontSize: '20px' } }}
+              value={values.username}
+              onChange={handleChange('username')}
+              error={!!errors.username}
             />
+            <ErrorTypography text={errors.username} />
           </FormGrid>
-          <FormGrid item xs={12} md={6} sx={{ mt: 3 }}>
+          <FormGrid item xs={12} md={6}>
             <TextField
               id="outlined-basic-2"
               variant="outlined"
               margin="dense"
               size="small"
               placeholder="メールアドレス"
-              inputProps={{ style: { fontSize: '20px'} }}
-            // value={values.username}
-            // onChange={handleChange('username')}
-            // error={!!errors.username}
-            // helperText={errors.username}
+              inputProps={{ style: { fontSize: '20px' } }}
+              value={values.email}
+              onChange={handleChange('email')}
+              error={!!errors.email}
             />
+            <ErrorTypography text={errors.email} />
           </FormGrid>
-          <FormGrid item xs={12} md={6} sx={{ mt: 3 }}>
+          <FormGrid item xs={12} md={6}>
             <TextField
               id="outlined-basic-3"
               variant="outlined"
               margin="dense"
               size="small"
               placeholder="姓名"
-              inputProps={{ style: { fontSize: '20px'} }}
-            // value={values.username}
-            // onChange={handleChange('username')}
-            // error={!!errors.username}
-            // helperText={errors.username}
+              inputProps={{ style: { fontSize: '20px' } }}
+              value={values.fullname}
+              onChange={handleChange('fullname')}
+              error={!!errors.fullname}
             />
+            <ErrorTypography text={errors.fullname} />
           </FormGrid>
-          <FormGrid item xs={12} md={6} sx={{ mt: 3 }}>
+          <FormGrid item xs={12} md={6}>
             <TextField
               id="outlined-basic-4"
               variant="outlined"
               margin="dense"
               size="small"
               placeholder="所属"
-              inputProps={{ style: { fontSize: '20px'} }}
-            // value={values.username}
-            // onChange={handleChange('username')}
-            // error={!!errors.username}
-            // helperText={errors.username}
+              inputProps={{ style: { fontSize: '20px' } }}
+              value={values.department}
+              onChange={handleChange('department')}
+              error={!!errors.department}
             />
+            <ErrorTypography text={errors.department} />
           </FormGrid>
           {/* start multi select */}
           <Autocomplete
@@ -167,7 +214,7 @@ const createUser = () => {
             inputValue={inputValue}
             onInputChange={handleInputChange}
             value={selectedOptions}
-            onChange={handleChange}
+            onChange={handleChangeSelect}
             disableCloseOnSelect
             getOptionLabel={(option) => option.title}
             // defaultValue = {[top100Films[0]]}
@@ -178,10 +225,10 @@ const createUser = () => {
                   checkedIcon={checkedIcon}
                   style={{ marginRight: 8 }}
                   checked={selected}
-                  sx={{color: '#68A7B9',}}
+                  sx={{ color: '#68A7B9', }}
                 />
                 <Typography
-                  sx={{color: "#797979",}}
+                  sx={{ color: "#797979", }}
                 >
                   {option.title}
                 </Typography>
@@ -200,10 +247,10 @@ const createUser = () => {
               ))
             }
             renderInput={(params) => (
-              <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{fontSize: '20px'}} />
+              <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{ fontSize: '20px' }} />
             )}
             style={{ width: '100%' }}
-            sx={{mt: 3, mb: 3,}}
+            sx={{ mt: 3, mb: 3, }}
           />
           {/* end multi select */}
 
@@ -211,15 +258,15 @@ const createUser = () => {
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <Button variant="contained" color="secondary" sx={{ mr: 2, width: "130px" }} LinkComponent={Link} href="/users">
               <Typography
-                sx={{color: "#FFFFFF",}}
+                sx={{ color: "#FFFFFF", }}
                 fontWeight="medium"
               >
                 キャンセル
               </Typography>
             </Button>
-            <Button variant="contained" sx={{ width: "130px" }}>
+            <Button variant="contained" sx={{ width: "130px" }} onClick={handleSubmit}>
               <Typography
-                sx={{color: "#FFFFFF"}}
+                sx={{ color: "#FFFFFF" }}
                 fontWeight="medium"
               >
                 新規追加

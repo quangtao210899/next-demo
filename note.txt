@@ -6,10 +6,11 @@
 
 **not done
 -ô input seach user (A, done)
--validate create/edit (B)
+-validate create/edit (B, doing)
 -loading when search (B)
 -pagination user (A, Done)
 -router (B)
+-CRUD target (B)
 
 -Autocomplete => select
     +Customized hook, Multiple , Checkboxes: multi select
