@@ -15,8 +15,6 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
-import { styled } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -24,6 +22,10 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Link from 'next/link'
 import { useTheme } from '@mui/material/styles';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 // search input
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
@@ -32,38 +34,36 @@ import TextField from '@mui/material/TextField';
 interface Data {
   id: number,
   name: string,
-  jobs: Array<string>,
-  created_at: string,
+  attribute: Array<string>,
 }
 
 function createData(
   id: number,
   name: string,
-  jobs: Array<string>,
-  created_at: string,
+  attribute: Array<string>,
 ): Data {
   return {
     id,
     name,
-    jobs,
-    created_at,
+    attribute,
   };
 }
 
 const rows = [
-  createData(1, 'User 1', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(2, 'User 2', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(3, 'User 3', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(4, 'User 4', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(5, 'User 5', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(6, 'User 6', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(7, 'User 7', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(8, 'User 8', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(9, 'User 8', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(10, 'User 10', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(11, 'User 11', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(12, 'User 12', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
-  createData(13, 'User 13', ["ジョブ 1", "ジョブ 2", "ジョブ 3", "ジョブ 4"], '0000.00.00 00:00'),
+  createData(1, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(2, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(3, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(4, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(5, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(6, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(7, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(8, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(9, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(10, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(11, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(12, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(13, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
+  createData(14, '対象名', ["性別", "年代", "地域", "時間帯", "家族構成", "職業"]),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -114,19 +114,13 @@ const headCells: readonly HeadCell[] = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'ユーザー名',
+    label: '対象名',
   },
   {
-    id: 'jobs',
+    id: 'attribute',
     numeric: false,
     disablePadding: false,
-    label: 'ジョブ',
-  },
-  {
-    id: 'created_at',
-    numeric: true,
-    disablePadding: false,
-    label: '登録日時',
+    label: '属性',
   }
 ];
 
@@ -243,6 +237,13 @@ export default function EnhancedTable() {
     [order, orderBy, page, rowsPerPage],
   );
   const theme = useTheme();
+
+  // select job
+  const [job, setJob] = React.useState('');
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setJob(event.target.value);
+  };
   return (
     <Box sx={{ width: '100%' }}>
       <Grid
@@ -261,7 +262,7 @@ export default function EnhancedTable() {
           }}
           fontWeight="medium"
         >
-          ユーザー一覧
+          対象設定一覧
         </Typography>
         <Stack direction="row" spacing={2}>
           <Button variant="contained" sx={{ width: "110px" }}
@@ -287,14 +288,53 @@ export default function EnhancedTable() {
           </Button>
         </Stack>
       </Grid>
-      <Box>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="baseline"
+        sx={{
+          mb: 2,
+        }}
+      >
+        <FormControl sx={{ minWidth: "40%" }} size="small">
+          {/* <InputLabel id="demo-select-small-label" disableAnimation={true}>ジョブを選択</InputLabel> */}
+          <Select
+            labelId="demo-select-small-label"
+            id="demo-select-small"
+            value={job}
+            label="Age"
+            onChange={handleChange}
+          >
+            <MenuItem value="">
+              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                <em>ジョブを選択</em>
+              </Typography>
+            </MenuItem>
+            <MenuItem value={10}>
+              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                Job 1
+              </Typography>
+            </MenuItem>
+            <MenuItem value={20}>
+              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                Job 2
+              </Typography>
+            </MenuItem>
+            <MenuItem value={30}>
+              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                Job 3
+              </Typography>
+            </MenuItem>
+          </Select>
+        </FormControl>
+
         <TextField
           id="input-with-icon-textfield"
-          sx = {{
-            width: "50%",
-            mb:2,
+          sx={{
+            width: "45%",
             [theme.breakpoints.up('sm')]: {
-              width: '50%',
+              width: '40%',
             },
             backgroundColor: '#D9D9D9',
             borderRadius: "4px",
@@ -303,13 +343,13 @@ export default function EnhancedTable() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: '#68A7B9' }}/>
+                <SearchIcon sx={{ color: '#68A7B9' }} />
               </InputAdornment>
             ),
           }}
           size="small"
         />
-      </Box>
+      </Grid>
 
       <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
@@ -361,19 +401,15 @@ export default function EnhancedTable() {
                     </TableCell>
                     <TableCell align="left" sx={{ padding: '0px' }}>
                       <Stack direction="row" spacing={1}>
-                        {row.jobs.map((job_data, job_key) => {
+                        {row.attribute.map((attribute_data, attribute_key) => {
                           return (
-                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "12px", backgroundColor: "#68A7B9BF", fontWeight: "700" }} />
+                            <Chip key={attribute_key} label={attribute_data} color="primary"
+                              sx={{ fontSize: "12px", backgroundColor: "#B1E0ED", color: "#797979" }}
+                            />
+
                           )
                         })}
                       </Stack>
-                    </TableCell>
-                    <TableCell align="right">
-                      <Typography
-                        sx={{ color: "#797979" }}
-                      >
-                        {row.created_at}
-                      </Typography>
                     </TableCell>
                   </TableRow>
                 );

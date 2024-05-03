@@ -15,8 +15,6 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
-import { styled } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -289,9 +287,9 @@ export default function EnhancedTable() {
       <Box>
         <TextField
           id="input-with-icon-textfield"
-          sx = {{
+          sx={{
             width: "50%",
-            mb:2,
+            mb: 2,
             [theme.breakpoints.up('sm')]: {
               width: '50%',
             },
@@ -302,7 +300,7 @@ export default function EnhancedTable() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: '#68A7B9' }}/>
+                <SearchIcon sx={{ color: '#68A7B9' }} />
               </InputAdornment>
             ),
           }}
@@ -362,15 +360,15 @@ export default function EnhancedTable() {
                       <Stack direction="row" spacing={1}>
                         {row.jobs.map((job_data, job_key) => {
                           return (
-                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "12px", backgroundColor: "#68A7B9BF", fontWeight: "700" }} />
+                            <Chip key={job_key} label={job_data} color="primary"
+                              sx={{ fontSize: "12px", backgroundColor: "#68A7B9BF", fontWeight: "700" }}
+                            />
                           )
                         })}
                       </Stack>
                     </TableCell>
                     <TableCell align="right">
-                      <Typography
-                        sx={{ color: "#797979" }}
-                      >
+                      <Typography sx={{ color: "#797979" }}>
                         {row.created_at}
                       </Typography>
                     </TableCell>
