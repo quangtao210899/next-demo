@@ -377,7 +377,7 @@ export default function EnhancedTable() {
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
+                    sx={{ cursor: 'pointer'}}
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -386,7 +386,7 @@ export default function EnhancedTable() {
                         inputProps={{
                           'aria-labelledby': labelId,
                         }}
-                        sx={{ color: '#68A7B9', }}
+                        sx={{ color: '#68A7B9', paddingTop: "16px", paddingBottom: "16px"  }}
                       />
                     </TableCell>
                     <TableCell
