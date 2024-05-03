@@ -272,7 +272,7 @@ const editUser = () => {
                   fontFamily: "Noto Sans JP",
                 }}
               >
-                新規追加
+                変更保存
               </Typography>
             </Button>
           </Box>
