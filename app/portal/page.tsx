@@ -22,11 +22,9 @@ const portal = () => {
         <Typography
           sx={{
             fontSize: '64px',
-            fontWeight: '900',
-            color: "#68A7B9",
-            lineHieght: "57.81px",
             fontFamily: "Odor Mean Chey"
           }}
+          fontWeight="bold"
         >
           C3P
         </Typography>
@@ -36,11 +34,10 @@ const portal = () => {
         <Typography
           sx={{
             fontSize: '24px',
-            fontWeight: '700',
             color: "#5C5C5C",
-            lineHieght: "14.06px",
             fontFamily: "Roboto"
           }}
+          fontWeight="medium"
         >
           企業名
         </Typography>
@@ -63,12 +60,11 @@ const portal = () => {
                 <Typography
                   sx={{
                     fontSize: '18px',
-                    fontWeight: '700',
                     color: "#606060",
-                    lineHieght: "10.55px",
                     fontFamily: "Roboto",
                     overflowWrap: "break-word"
                   }}
+                  fontWeight="medium"
                 >
                   オペレーター <br />UI
                 </Typography>
@@ -92,12 +88,11 @@ const portal = () => {
                 <Typography
                   sx={{
                     fontSize: '18px',
-                    fontWeight: '700',
                     color: "#606060",
-                    lineHieght: "10.55px",
                     fontFamily: "Roboto",
                     overflowWrap: "break-word"
                   }}
+                  fontWeight="medium"
                 >
                   ユーザー設定 <br />&nbsp;
                 </Typography>
@@ -121,12 +116,11 @@ const portal = () => {
                 <Typography
                   sx={{
                     fontSize: '18px',
-                    fontWeight: '700',
                     color: "#606060",
-                    lineHieght: "10.55px",
                     fontFamily: "Roboto",
                     overflowWrap: "break-word"
                   }}
+                  fontWeight="medium"
                 >
                   対象設定<br />&nbsp;
                 </Typography>
@@ -150,12 +144,11 @@ const portal = () => {
                 <Typography
                   sx={{
                     fontSize: '18px',
-                    fontWeight: '700',
                     color: "#606060",
-                    lineHieght: "10.55px",
                     fontFamily: "Roboto",
                     overflowWrap: "break-word"
                   }}
+                  fontWeight="medium"
                 >
                   イニシャルト <br /> ーク設定
                 </Typography>
@@ -179,12 +172,11 @@ const portal = () => {
                 <Typography
                   sx={{
                     fontSize: '18px',
-                    fontWeight: '700',
                     color: "#606060",
-                    lineHieght: "10.55px",
                     fontFamily: "Roboto",
                     overflowWrap: "break-word"
                   }}
+                  fontWeight="medium"
                 >
                   スマートチェッ<br />クリスト設定
                 </Typography>
@@ -208,12 +200,11 @@ const portal = () => {
                 <Typography
                   sx={{
                     fontSize: '18px',
-                    fontWeight: '700',
                     color: "#606060",
-                    lineHieght: "10.55px",
                     fontFamily: "Roboto",
                     overflowWrap: "break-word"
                   }}
+                  fontWeight="medium"
                 >
                   ジョブ設定<br />&nbsp;
                 </Typography>
