@@ -10,6 +10,7 @@ import TextField from "@mui/material/TextField";
 import Divider from '@mui/material/Divider';
 // multi select start
 import Checkbox from '@mui/material/Checkbox';
+import Chip from '@mui/material/Chip';
 import Autocomplete from '@mui/material/Autocomplete';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -225,12 +226,25 @@ const createUser = () => {
                 </Typography>
               </li>
             )}
-            style={{ width: '100%' }}
+            renderTags={(value: readonly any[], getTagProps) =>
+              value.map((option: any, index: number) => (
+                <Chip label={option.title} {...getTagProps({ index })} 
+                  sx={{
+                    fontSize: '14px',
+                    fontWeight: '700',
+                    color: "#FFFFFF",
+                    fontFamily: "Noto Sans JP",
+                    backgroundColor: "#68A7B9"
+                  }}
+                />
+              ))
+            }
             renderInput={(params) => (
               <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{
                 fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP"
               }} />
             )}
+            style={{ width: '100%' }}
           />
           {/* end multi select */}
 

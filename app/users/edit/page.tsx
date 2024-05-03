@@ -225,12 +225,25 @@ const editUser = () => {
                 </Typography>
               </li>
             )}
-            style={{ width: '100%' }}
+            renderTags={(value: readonly any[], getTagProps) =>
+              value.map((option: any, index: number) => (
+                <Chip label={option.title} {...getTagProps({ index })} 
+                  sx={{
+                    fontSize: '14px',
+                    fontWeight: '700',
+                    color: "#FFFFFF",
+                    fontFamily: "Noto Sans JP",
+                    backgroundColor: "#68A7B9"
+                  }}
+                />
+              ))
+            }
             renderInput={(params) => (
               <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{
                 fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP"
               }} />
             )}
+            style={{ width: '100%' }}
           />
           {/* end multi select */}
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
