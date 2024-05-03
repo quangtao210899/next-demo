@@ -307,7 +307,7 @@ export default function EnhancedTable() {
           ユーザー一覧
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button variant="contained" sx={{width: "110px" }} 
+          <Button variant="contained" sx={{ width: "110px" }}
             LinkComponent={Link} href="/users/create">
             <Typography
               sx={{
@@ -318,7 +318,7 @@ export default function EnhancedTable() {
               新規追加
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ width: "110px"}} color="secondary" disabled={selected.length ? false : true} onClick={handleClickOpenModal}>
+          <Button variant="contained" sx={{ width: "110px" }} color="secondary" disabled={selected.length ? false : true} onClick={handleClickOpenModal}>
             <Typography
               sx={{
                 color: "#FFFFFF",
@@ -377,12 +377,7 @@ export default function EnhancedTable() {
                         inputProps={{
                           'aria-labelledby': labelId,
                         }}
-                        sx={{
-                          color: '#68A7B9',
-                          '&.Mui-checked': {
-                            color: '#68A7B9',
-                          },
-                        }}
+                        sx={{ color: '#68A7B9', }}
                       />
                     </TableCell>
                     <TableCell
@@ -391,14 +386,7 @@ export default function EnhancedTable() {
                       scope="row"
                       padding="none"
                     >
-                      <Typography
-                        sx={{
-                          fontSize: '16px',
-                          fontWeight: '400',
-                          color: "#797979",
-                          fontFamily: "Noto Sans JP",
-                        }}
-                      >
+                      <Typography sx={{ color: "#797979", }} >
                         {row.name}
                       </Typography>
                     </TableCell>
@@ -406,19 +394,14 @@ export default function EnhancedTable() {
                       <Stack direction="row" spacing={1}>
                         {row.jobs.map((job_data, job_key) => {
                           return (
-                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "10px", fontFamily: "Noto Sans JP", fontWeight: "700", backgroundColor: "#68A7B9" }} />
+                            <Chip key={job_key} label={job_data} color="primary" sx={{ fontSize: "10px", fontWeight: "700" }} />
                           )
                         })}
                       </Stack>
                     </TableCell>
                     <TableCell align="right">
                       <Typography
-                        sx={{
-                          fontSize: '16px',
-                          fontWeight: '400',
-                          color: "#797979",
-                          fontFamily: "Noto Sans JP",
-                        }}
+                        sx={{ color: "#797979" }}
                       >
                         {row.created_at}
                       </Typography>
@@ -446,13 +429,7 @@ export default function EnhancedTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
-          sx={{
-            fontSize: '16px',
-            fontWeight: '400',
-            color: "#6D6D6D",
-            lineHeight: "11.58px",
-            fontFamily: "Noto Sans JP",
-          }}
+          sx={{ color: "#6D6D6D" }}
         />
       </Paper>
       <Dialog
@@ -468,49 +445,45 @@ export default function EnhancedTable() {
           },
         }}
       >
-        <DialogTitle id="alert-dialog-title" sx={{
-          fontSize: '24px',
-          fontWeight: '700',
-          color: "#68A7B9",
-          lineHeight: "14.52px",
-          fontFamily: "Inter",
-          mb: 4,
-          mt: 3
-        }}>
+        <DialogTitle id="alert-dialog-title"
+          sx={{
+            fontSize: '24px',
+            fontWeight: '700',
+            fontFamily: "Inter",
+            mb: 4,
+            mt: 3
+          }}
+        >
           {"選択した項目を削除"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description" sx={{
-            fontSize: '16px',
-            fontWeight: '400',
-            color: "#797979",
-            lineHeight: "9.68px",
-            fontFamily: "Inter",
-            textAlign: "center",
-          }}>
+          <DialogContentText id="alert-dialog-description"
+            sx={{
+              fontSize: '16px',
+              color: "#797979",
+              fontFamily: "Inter",
+              textAlign: "center",
+            }}
+          >
             本当に削除しますか
           </DialogContentText>
         </DialogContent>
-        <DialogActions sx={{ justifyContent: 'center', margin: 0,mb: 3 }}>
-          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "130px", '&:hover': { backgroundColor: "#6E6C6C" } }} onClick={handleCloseModal}>
+        <DialogActions sx={{ justifyContent: 'center', margin: 0, mb: 3 }}>
+          <Button variant="contained" sx={{ width: "130px" }} onClick={handleCloseModal}>
             <Typography
               sx={{
-                fontSize: '16px',
                 fontWeight: '700',
                 color: "#FFFFFF",
-                fontFamily: "Noto Sans JP",
               }}
             >
               キャンセル
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "130px", '&:hover': { backgroundColor: "#5b8e9f" } }} onClick={handleCloseModal}>
+          <Button variant="contained" sx={{ width: "130px"}} color= "secondary" onClick={handleCloseModal}>
             <Typography
               sx={{
-                fontSize: '16px',
                 fontWeight: '700',
                 color: "#FFFFFF",
-                fontFamily: "Noto Sans JP",
               }}
             >
               削除する
