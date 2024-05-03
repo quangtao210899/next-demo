@@ -288,10 +288,10 @@ export default function EnhancedTable() {
         <TextField
           id="input-with-icon-textfield"
           sx={{
-            width: "50%",
+            width: "45%",
             mb: 2,
             [theme.breakpoints.up('sm')]: {
-              width: '50%',
+              width: '40%',
             },
             backgroundColor: '#D9D9D9',
             borderRadius: "4px",
