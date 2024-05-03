@@ -1,5 +1,5 @@
--Theme: học cách thêm vào project (done)
--Tìm extension đo kích thước màn hình
+-Theme: học cách thêm vào project (doing)
+-Tìm extension đo kích thước màn hình (done)
 -Router
 -#68A7B9
 **not done

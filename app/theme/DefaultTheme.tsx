@@ -5,11 +5,13 @@ import { createTheme } from '@mui/material/styles';
 const DefaultTheme = createTheme({
   palette: {
     primary: {
-      light: '#68A7B9',
       main: '#68A7B9',
-      dark: '#68A7B9',
       contrastText: '#fff',
-    }
+    },
+    secondary: {
+      main: '#7B7979',
+      contrastText: '#fff',
+    },
   },
   typography: {
     fontFamily: 'Noto Sans JP',
@@ -20,8 +22,10 @@ const DefaultTheme = createTheme({
     allVariants: {
       color: "#68A7B9"
     },
+    // h1: {
+    //   color: "#7B7979"
+    // }
   },
-
 });
 
 export default DefaultTheme;

@@ -301,35 +301,29 @@ export default function EnhancedTable() {
         <Typography
           sx={{
             fontSize: '24px',
-            fontWeight: '700',
-            color: "#68A7B9",
-            fontFamily: "Noto Sans JP",
           }}
+          fontWeight="medium"
         >
           ユーザー一覧
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "110px", '&:hover': { backgroundColor: "#5b8e9f" } }} 
+          <Button variant="contained" sx={{width: "110px" }} 
             LinkComponent={Link} href="/users/create">
             <Typography
               sx={{
-                fontSize: '16px',
-                fontWeight: '700',
                 color: "#FFFFFF",
-                fontFamily: "Noto Sans JP",
               }}
+              fontWeight="medium"
             >
               新規追加
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }} disabled={selected.length ? false : true} onClick={handleClickOpenModal}>
+          <Button variant="contained" sx={{ width: "110px"}} color="secondary" disabled={selected.length ? false : true} onClick={handleClickOpenModal}>
             <Typography
               sx={{
-                fontSize: '16px',
-                fontWeight: '700',
                 color: "#FFFFFF",
-                fontFamily: "Noto Sans JP",
               }}
+              fontWeight="medium"
             >
               削除
             </Typography>
