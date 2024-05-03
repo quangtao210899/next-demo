@@ -161,7 +161,7 @@ const createUser = () => {
           {/* start multi select */}
           <Autocomplete
             multiple
-            size="medium"
+            size="small"
             id="checkboxes-tags-demo"
             options={top100Films}
             inputValue={inputValue}

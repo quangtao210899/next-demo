@@ -6,7 +6,9 @@
 
 **not done
 -ô input seach user (B)
--multi select create user (A)
+-validate create/edit user
+-pagination user
+-router
 
 -Autocomplete => select
     +Customized hook, Multiple , Checkboxes: multi select

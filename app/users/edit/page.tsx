@@ -164,7 +164,7 @@ const editUser = () => {
               mt: 3, mb: 3
             }}
             multiple
-            size="medium"
+            size="small"
             id="checkboxes-tags-demo"
             options={top100Films}
             inputValue={inputValue}
