@@ -16,7 +16,7 @@ import Grid from '@mui/material/Grid';
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import { z } from 'zod';
-
+import ErrorTypography from "../component/ErrorTypography"
 
 interface State {
   password: string
@@ -113,10 +113,10 @@ const LoginPage = () => {
                 value={values.username}
                 onChange={handleChange('username')}
                 error={!!errors.username}
-                helperText={errors.username}
               />
+              <ErrorTypography text={errors.username} color="#EC0000"/>
             </FormGrid>
-            <FormGrid item xs={12} md={6} mt={2}>
+            <FormGrid item xs={12} md={6}>
               <FormLabel htmlFor="username"
                 sx={{
                   fontSize: '15px',
@@ -131,7 +131,6 @@ const LoginPage = () => {
                 onChange={handleChange('password')}
                 type={values.showPassword ? 'text' : 'password'}
                 error={!!errors.password}
-                helperText={errors.password}
                 size="small"
                 InputProps={{
                   endAdornment: (
@@ -148,6 +147,7 @@ const LoginPage = () => {
                 }}
                 required
               />
+              <ErrorTypography text={errors.password} color="#EC0000"/>
             </FormGrid>
             <Box
               sx={{ mb: 3, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
