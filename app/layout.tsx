@@ -4,7 +4,8 @@ import "./globals.css";
 import Box from '@mui/material/Box'
 import NavBar from './navbar/navbar'
 import Container from '@mui/material/Container';
-
+import DefaultTheme from './theme/DefaultTheme';
+import { ThemeProvider } from '@mui/material/styles';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -31,12 +32,14 @@ export default function RootLayout({
         <link rel='shortcut icon' href='/images/favicon.png' />
       </head>
       <body className={inter.className}>
-        <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative', backgroundColor: "#EEE" }}>
-          <NavBar />
-          <Container>
-            {children}
-          </Container>
-        </Box>
+        <ThemeProvider theme={DefaultTheme}>
+          <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative', backgroundColor: "#EEE" }}>
+            <NavBar />
+            <Container>
+              {children}
+            </Container>
+          </Box>
+        </ThemeProvider>
       </body>
     </html>
   );

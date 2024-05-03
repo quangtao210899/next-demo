@@ -187,9 +187,6 @@ const createUser = () => {
           </FormGrid>
           {/* start multi select */}
           <Autocomplete
-            sx={{
-              mt: 3, mb: 3
-            }}
             multiple
             size="medium"
             id="checkboxes-tags-demo"
@@ -200,6 +197,7 @@ const createUser = () => {
             onChange={handleChange}
             disableCloseOnSelect
             getOptionLabel={(option) => option.title}
+            // defaultValue = {[top100Films[0]]}
             renderOption={(props, option, { selected }) => (
               <li {...props}>
                 <Checkbox
@@ -228,7 +226,7 @@ const createUser = () => {
             )}
             renderTags={(value: readonly any[], getTagProps) =>
               value.map((option: any, index: number) => (
-                <Chip label={option.title} {...getTagProps({ index })} 
+                <Chip label={option.title} {...getTagProps({ index })}
                   sx={{
                     fontSize: '14px',
                     fontWeight: '700',
@@ -245,6 +243,18 @@ const createUser = () => {
               }} />
             )}
             style={{ width: '100%' }}
+            sx={{
+              mt: 3, mb: 3,
+              // "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+              //   border: "1px solid #eee"
+              // },
+              // "& :focus .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+              //   border: "1px solid #eee"
+              // },
+              // "& :hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+              //   border: "1px solid #eee"
+              // }
+            }}
           />
           {/* end multi select */}
 
