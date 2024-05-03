@@ -233,7 +233,21 @@ const editUser = () => {
             )}
           />
           {/* end multi select */}
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+            <Link href="/portal" style={{ textDecoration: 'underline', color: "#68A7B9", }}>
+              <Typography
+                sx={{
+                  fontSize: '20px',
+                  fontWeight: '400',
+                  color: "#68A7B9",
+                  fontFamily: "Noto Sans JP",
+                }}
+              >
+                パスワード変更
+              </Typography>
 
+            </Link>
+          </Box>
           <Divider sx={{ mt: 5, borderColor: "#68A7B9", borderWidth: '1px', mb: 5 }} />
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <Button variant="contained" sx={{ mr: 2, backgroundColor: "#7B7979", width: "130px", '&:hover': { backgroundColor: "#6E6C6C" } }}
