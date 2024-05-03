@@ -298,13 +298,14 @@ export default function EnhancedTable() {
         }}
       >
         <FormControl sx={{ minWidth: "40%" }} size="small">
-          {/* <InputLabel id="demo-select-small-label" disableAnimation={true}>ジョブを選択</InputLabel> */}
+          <InputLabel id="demo-select-small-label" disableAnimation={true}>ジョブを選択</InputLabel>
           <Select
             labelId="demo-select-small-label"
             id="demo-select-small"
             value={job}
             label="Age"
             onChange={handleChange}
+            sx={{backgroundColor: "#FFFFFF"}}
           >
             <MenuItem value="">
               <Typography sx={{ color: "#797979", fontSize: "15px" }}>
