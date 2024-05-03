@@ -34,12 +34,12 @@ const detailUser = () => {
           ユーザー新規追加
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }} 
+          <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }}
             LinkComponent={Link} href="/users">
             <Typography
               sx={{
-                fontSize: '16px !important',
-                fontWeight: '700 !important',
+                fontSize: '16px',
+                fontWeight: '700',
                 color: "#FFFFFF",
                 fontFamily: "Noto Sans JP",
               }}
@@ -51,8 +51,8 @@ const detailUser = () => {
             LinkComponent={Link} href="/users/edit">
             <Typography
               sx={{
-                fontSize: '16px !important',
-                fontWeight: '700 !important',
+                fontSize: '16px',
+                fontWeight: '700',
                 color: "#FFFFFF",
                 fontFamily: "Noto Sans JP",
               }}
@@ -62,8 +62,31 @@ const detailUser = () => {
           </Button>
         </Stack>
       </Grid>
-      <Grid>
-
+      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 3, sm: 6, md: 9 }} columns={{ xs: 12, sm: 12, md: 12 }} sx={{ mb: 2 }}>
+        <Grid item xs={12} sm={3} md={3}>
+          <Typography
+            sx={{
+              fontSize: '16px',
+              fontWeight: '700',
+              color: "#68A7B9",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            ユーザー名
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={9} md={9}>
+          <Typography
+            sx={{
+              fontSize: '16px',
+              fontWeight: '700',
+              color: "#FFFFFF",
+              fontFamily: "Noto Sans JP",
+            }}
+          >
+            編集
+          </Typography>
+        </Grid>
       </Grid>
     </Box>
   )

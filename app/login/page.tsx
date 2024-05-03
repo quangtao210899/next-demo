@@ -82,12 +82,12 @@ const LoginPage = () => {
   return (
     <Box className='content-center'>
       <Card sx={{ zIndex: 1 }}>
-        <CardContent sx={{ padding: theme => `${theme.spacing(3, 5, 5)} !important` }}>
+        <CardContent sx={{ padding: theme => `${theme.spacing(3, 5, 5)}` }}>
           <Box sx={{ mb: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Typography
               sx={{
-                fontSize: '96px !important',
-                fontWeight: '900 !important',
+                fontSize: '96px',
+                fontWeight: '900',
                 color: "#68A7B9",
                 lineHieght: "57.81px",
                 fontFamily: "Odor Mean Chey"
@@ -100,8 +100,8 @@ const LoginPage = () => {
             <FormGrid item xs={12} md={6}>
               <FormLabel htmlFor="username" 
                 sx={{
-                  fontSize: '15px !important',
-                  fontWeight: '400 !important',
+                  fontSize: '15px',
+                  fontWeight: '400',
                   color: "#7B7979",
                   lineHieght: "6.81px",
                   fontFamily: "Noto Sans"
@@ -128,8 +128,8 @@ const LoginPage = () => {
             <FormGrid item xs={12} md={6} mt={2}>
               <FormLabel htmlFor="username"
                 sx={{
-                  fontSize: '15px !important',
-                  fontWeight: '400 !important',
+                  fontSize: '15px',
+                  fontWeight: '400',
                   color: "#7B7979",
                   lineHieght: "6.81px",
                   fontFamily: "Noto Sans"

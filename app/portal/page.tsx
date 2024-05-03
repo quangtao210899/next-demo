@@ -21,8 +21,8 @@ const portal = () => {
       <Box sx={{ mt: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Typography
           sx={{
-            fontSize: '64px !important',
-            fontWeight: '900 !important',
+            fontSize: '64px',
+            fontWeight: '900',
             color: "#68A7B9",
             lineHieght: "57.81px",
             fontFamily: "Odor Mean Chey"
@@ -35,8 +35,8 @@ const portal = () => {
       <Box sx={{ mt: 0, mb: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Typography
           sx={{
-            fontSize: '24px !important',
-            fontWeight: '700 !important',
+            fontSize: '24px',
+            fontWeight: '700',
             color: "#5C5C5C",
             lineHieght: "14.06px",
             fontFamily: "Roboto"
@@ -62,8 +62,8 @@ const portal = () => {
                 </IconButton>
                 <Typography
                   sx={{
-                    fontSize: '18px !important',
-                    fontWeight: '700 !important',
+                    fontSize: '18px',
+                    fontWeight: '700',
                     color: "#606060",
                     lineHieght: "10.55px",
                     fontFamily: "Roboto",
@@ -91,8 +91,8 @@ const portal = () => {
                 </IconButton>
                 <Typography
                   sx={{
-                    fontSize: '18px !important',
-                    fontWeight: '700 !important',
+                    fontSize: '18px',
+                    fontWeight: '700',
                     color: "#606060",
                     lineHieght: "10.55px",
                     fontFamily: "Roboto",
@@ -120,8 +120,8 @@ const portal = () => {
                 </IconButton>
                 <Typography
                   sx={{
-                    fontSize: '18px !important',
-                    fontWeight: '700 !important',
+                    fontSize: '18px',
+                    fontWeight: '700',
                     color: "#606060",
                     lineHieght: "10.55px",
                     fontFamily: "Roboto",
@@ -149,8 +149,8 @@ const portal = () => {
                 </IconButton>
                 <Typography
                   sx={{
-                    fontSize: '18px !important',
-                    fontWeight: '700 !important',
+                    fontSize: '18px',
+                    fontWeight: '700',
                     color: "#606060",
                     lineHieght: "10.55px",
                     fontFamily: "Roboto",
@@ -178,8 +178,8 @@ const portal = () => {
                 </IconButton>
                 <Typography
                   sx={{
-                    fontSize: '18px !important',
-                    fontWeight: '700 !important',
+                    fontSize: '18px',
+                    fontWeight: '700',
                     color: "#606060",
                     lineHieght: "10.55px",
                     fontFamily: "Roboto",
@@ -207,8 +207,8 @@ const portal = () => {
                 </IconButton>
                 <Typography
                   sx={{
-                    fontSize: '18px !important',
-                    fontWeight: '700 !important',
+                    fontSize: '18px',
+                    fontWeight: '700',
                     color: "#606060",
                     lineHieght: "10.55px",
                     fontFamily: "Roboto",

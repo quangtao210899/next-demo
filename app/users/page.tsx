@@ -61,9 +61,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: '100% !important',
+    width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '100% !important',
+      width: '100%',
     },
   },
   '&:focus': {
@@ -300,8 +300,8 @@ export default function EnhancedTable() {
       >
         <Typography
           sx={{
-            fontSize: '24px !important',
-            fontWeight: '700 !important',
+            fontSize: '24px',
+            fontWeight: '700',
             color: "#68A7B9",
             fontFamily: "Noto Sans JP",
           }}
@@ -313,8 +313,8 @@ export default function EnhancedTable() {
             LinkComponent={Link} href="/users/create">
             <Typography
               sx={{
-                fontSize: '16px !important',
-                fontWeight: '700 !important',
+                fontSize: '16px',
+                fontWeight: '700',
                 color: "#FFFFFF",
                 fontFamily: "Noto Sans JP",
               }}
@@ -325,8 +325,8 @@ export default function EnhancedTable() {
           <Button variant="contained" sx={{ backgroundColor: "#7B7979", width: "110px", '&:hover': { backgroundColor: "#6E6C6C" } }} disabled={selected.length ? false : true} onClick={handleClickOpenModal}>
             <Typography
               sx={{
-                fontSize: '16px !important',
-                fontWeight: '700 !important',
+                fontSize: '16px',
+                fontWeight: '700',
                 color: "#FFFFFF",
                 fontFamily: "Noto Sans JP",
               }}

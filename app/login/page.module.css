@@ -1,6 +1,6 @@
 .logo_login {
-    font-size: 96px !important;
-    font-weight: 900 !important;
+    font-size: 96px;
+    font-weight: 900;
     color: #68A7B9;
     line-height: 57.81px;
     font-family: "Odor Mean Chey";
@@ -8,8 +8,8 @@
 }
 
 .label_login {
-    font-size: 15px !important;
-    font-weight: 400 !important;
+    font-size: 15px;
+    font-weight: 400;
     color: "#7B7979";
     font-family: "Noto Sans";
 }
