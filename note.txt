@@ -5,9 +5,9 @@
 -fontWeight="medium"
 
 **not done
--ô input seach user (A)
+-ô input seach user (A, done)
 -validate create/edit user (B)
--pagination user (A)
+-pagination user (A, Done)
 -router (B)
 
 -Autocomplete => select

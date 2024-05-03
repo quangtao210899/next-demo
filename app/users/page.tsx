@@ -16,7 +16,6 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
-import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -24,7 +23,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Link from 'next/link'
+import { useTheme } from '@mui/material/styles';
 // search input
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
+import TextField from '@mui/material/TextField';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -285,7 +288,7 @@ export default function EnhancedTable() {
       ),
     [order, orderBy, page, rowsPerPage],
   );
-
+  const theme = useTheme();
   return (
     <Box sx={{ width: '100%' }}>
       <Grid
@@ -331,15 +334,27 @@ export default function EnhancedTable() {
         </Stack>
       </Grid>
       <Box>
-        <Search sx={{ mb: 2 }}>
-          <SearchIconWrapper>
-            <SearchIcon sx={{ color: '#68A7B9' }} />
-          </SearchIconWrapper>
-          <StyledInputBase
-            // placeholder="Search…"
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </Search>
+        <TextField
+          id="input-with-icon-textfield"
+          sx = {{
+            width: "50%",
+            mb:2,
+            [theme.breakpoints.up('sm')]: {
+              width: '50%',
+            },
+            backgroundColor: '#D9D9D9',
+            borderRadius: "4px",
+            "& fieldset": { border: 'none' },
+          }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon sx={{ color: '#68A7B9' }}/>
+              </InputAdornment>
+            ),
+          }}
+          size="small"
+        />
       </Box>
 
       <Paper sx={{ width: '100%', mb: 2 }}>
