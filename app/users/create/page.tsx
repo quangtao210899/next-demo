@@ -90,18 +90,11 @@ const createUser = () => {
         direction="row"
         justifyContent="space-between"
         alignItems="baseline"
-        sx={{
-          mt: 2,
-          mb: 1,
-        }}
+        sx={{mt: 2,mb: 1}}
       >
         <Typography
-          sx={{
-            fontSize: '24px',
-            fontWeight: '700',
-            color: "#68A7B9",
-            fontFamily: "Noto Sans JP",
-          }}
+          sx={{fontSize: '24px'}}
+          fontWeight="medium"
         >
           ユーザー新規追加
         </Typography>
@@ -116,12 +109,7 @@ const createUser = () => {
               margin="dense"
               size="small"
               placeholder="ユーザー名"
-              inputProps={{ style: { fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" } }}
-              sx={{
-                '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#68A7B9', // Đặt màu viền khi focus
-                },
-              }}
+              inputProps={{ style: { fontSize: '20px'} }}
             // value={values.username}
             // onChange={handleChange('username')}
             // error={!!errors.username}
@@ -135,12 +123,7 @@ const createUser = () => {
               margin="dense"
               size="small"
               placeholder="メールアドレス"
-              inputProps={{ style: { fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" } }}
-              sx={{
-                '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#68A7B9', // Đặt màu viền khi focus
-                },
-              }}
+              inputProps={{ style: { fontSize: '20px'} }}
             // value={values.username}
             // onChange={handleChange('username')}
             // error={!!errors.username}
@@ -154,12 +137,7 @@ const createUser = () => {
               margin="dense"
               size="small"
               placeholder="姓名"
-              inputProps={{ style: { fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" } }}
-              sx={{
-                '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#68A7B9', // Đặt màu viền khi focus
-                },
-              }}
+              inputProps={{ style: { fontSize: '20px'} }}
             // value={values.username}
             // onChange={handleChange('username')}
             // error={!!errors.username}
@@ -173,12 +151,7 @@ const createUser = () => {
               margin="dense"
               size="small"
               placeholder="所属"
-              inputProps={{ style: { fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP" } }}
-              sx={{
-                '& input:focus ~ .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#68A7B9', // Đặt màu viền khi focus
-                },
-              }}
+              inputProps={{ style: { fontSize: '20px'} }}
             // value={values.username}
             // onChange={handleChange('username')}
             // error={!!errors.username}
@@ -205,20 +178,10 @@ const createUser = () => {
                   checkedIcon={checkedIcon}
                   style={{ marginRight: 8 }}
                   checked={selected}
-                  sx={{
-                    color: '#68A7B9',
-                    '&.Mui-checked': {
-                      color: '#68A7B9',
-                    },
-                  }}
+                  sx={{color: '#68A7B9',}}
                 />
                 <Typography
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: '400',
-                    color: "#797979",
-                    fontFamily: "Noto Sans JP",
-                  }}
+                  sx={{color: "#797979",}}
                 >
                   {option.title}
                 </Typography>
@@ -231,56 +194,33 @@ const createUser = () => {
                     fontSize: '14px',
                     fontWeight: '700',
                     color: "#FFFFFF",
-                    fontFamily: "Noto Sans JP",
-                    backgroundColor: "#68A7B9"
+                    backgroundColor: "#68A7B9BF"
                   }}
                 />
               ))
             }
             renderInput={(params) => (
-              <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{
-                fontSize: '20px', fontWeight: '400', fontFamily: "Noto Sans JP"
-              }} />
+              <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{fontSize: '20px'}} />
             )}
             style={{ width: '100%' }}
-            sx={{
-              mt: 3, mb: 3,
-              // "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-              //   border: "1px solid #eee"
-              // },
-              // "& :focus .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-              //   border: "1px solid #eee"
-              // },
-              // "& :hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-              //   border: "1px solid #eee"
-              // }
-            }}
+            sx={{mt: 3, mb: 3,}}
           />
           {/* end multi select */}
 
           <Divider sx={{ mt: 5, borderColor: "#68A7B9", borderWidth: '1px', mb: 5 }} />
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-            <Button variant="contained" sx={{ mr: 2, backgroundColor: "#7B7979", width: "130px", '&:hover': { backgroundColor: "#6E6C6C" } }}
-              LinkComponent={Link} href="/users">
+            <Button variant="contained" color="secondary" sx={{ mr: 2, width: "130px" }} LinkComponent={Link} href="/users">
               <Typography
-                sx={{
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: "#FFFFFF",
-                  fontFamily: "Noto Sans JP",
-                }}
+                sx={{color: "#FFFFFF",}}
+                fontWeight="medium"
               >
                 キャンセル
               </Typography>
             </Button>
-            <Button variant="contained" sx={{ backgroundColor: "#68A7B9", width: "130px", '&:hover': { backgroundColor: "#5b8e9f" } }}>
+            <Button variant="contained" sx={{ width: "130px" }}>
               <Typography
-                sx={{
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: "#FFFFFF",
-                  fontFamily: "Noto Sans JP",
-                }}
+                sx={{color: "#FFFFFF"}}
+                fontWeight="medium"
               >
                 新規追加
               </Typography>
