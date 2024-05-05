@@ -240,10 +240,6 @@ export default function EnhancedTable() {
 
   // select job
   const [job, setJob] = React.useState('');
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setJob(event.target.value);
-  };
   return (
     <Box sx={{ width: '100%' }}>
       <Grid
@@ -351,8 +347,7 @@ export default function EnhancedTable() {
         }}
         size="small"
       />
-    </Stack>
-
+      </Stack>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
           <Table
