@@ -8,7 +8,7 @@
 -loading when search (B)
 -router (B)
 -CRUD target (doing)
-    +list (doing)
+    +list (done)
     +detail
     +add
     +edit
