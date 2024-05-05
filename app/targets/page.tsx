@@ -161,7 +161,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
-            sx={{ color: '#FFFFFF', fontSize: '16px', fontWeight: '700', lineHeight: '11.58px' }}
+            sx={{ color: '#FFFFFF', fontSize: '16px', fontWeight: '700'}}
             size='small'
           >
             {headCell.label}
