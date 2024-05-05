@@ -288,13 +288,14 @@ export default function EnhancedTable() {
           </Button>
         </Stack>
       </Grid>
-      <Grid
-        container
+      <Stack
+        // container
         direction="row"
         justifyContent="space-between"
-        alignItems="baseline"
+        alignItems="flex-start"
         sx={{
           mb: 2,
+          mt:1
         }}
       >
         <TextField
@@ -302,7 +303,6 @@ export default function EnhancedTable() {
           onChange={(e) => setJob(e.target.value)}
           select
           label="ジョブを選択"
-          fullWidth
           size="small"
           sx={{
             width: "45%",
@@ -311,48 +311,47 @@ export default function EnhancedTable() {
             },
           }}
         >
-          <MenuItem value="">
-            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-              <em>ジョブを選択</em>
-            </Typography>
-          </MenuItem>
-          <MenuItem value={10}>
-            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-              Job 1
-            </Typography>
-          </MenuItem>
-          <MenuItem value={20}>
-            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-              Job 2
-            </Typography>
-          </MenuItem>
-          <MenuItem value={30}>
-            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-              Job 3
-            </Typography>
-          </MenuItem>
-        </TextField>
-        <TextField
-          id="input-with-icon-textfield"
-          sx={{
-            width: "45%",
-            [theme.breakpoints.up('sm')]: {
-              width: '40%',
-            },
-            backgroundColor: '#D9D9D9',
-            borderRadius: "4px",
-            "& fieldset": { border: 'none' },
-          }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon sx={{ color: '#68A7B9' }} />
-              </InputAdornment>
-            ),
-          }}
-          size="small"
-        />
-      </Grid>
+        <MenuItem value="">
+          <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+            <em>ジョブを選択</em>
+          </Typography>
+        </MenuItem>
+        <MenuItem value={10}>
+          <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+            Job 1
+          </Typography>
+        </MenuItem>
+        <MenuItem value={20}>
+          <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+            Job 2
+          </Typography>
+        </MenuItem>
+        <MenuItem value={30}>
+          <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+            Job 3
+          </Typography>
+        </MenuItem>
+      </TextField>
+      <TextField id="input-with-icon-textfield"
+        sx={{
+          width: "45%",
+          [theme.breakpoints.up('sm')]: {
+            width: '40%',
+          },
+          backgroundColor: '#D9D9D9',
+          borderRadius: "4px",
+          "& fieldset": { border: 'none' },
+        }}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon sx={{ color: '#68A7B9' }} />
+            </InputAdornment>
+          ),
+        }}
+        size="small"
+      />
+    </Stack>
 
       <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
@@ -503,6 +502,6 @@ export default function EnhancedTable() {
           </Button>
         </DialogActions>
       </Dialog>
-    </Box>
+    </Box >
   );
 }
