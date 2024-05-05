@@ -101,7 +101,7 @@ const portal = () => {
           </Link>
         </Grid>
         <Grid item xs={2} sm={4} md={4}>
-          <Link href="/users" sx={{ textDecoration: 'none' }}>
+          <Link href="/targets" sx={{ textDecoration: 'none' }}>
             <Item sx={{ boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);' }}>
               <Box>
                 <IconButton
