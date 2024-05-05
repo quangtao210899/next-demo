@@ -297,39 +297,41 @@ export default function EnhancedTable() {
           mb: 2,
         }}
       >
-        <FormControl sx={{ minWidth: "40%" }} size="small">
-          <InputLabel id="demo-select-small-label" disableAnimation={true}>ジョブを選択</InputLabel>
-          <Select
-            labelId="demo-select-small-label"
-            id="demo-select-small"
-            value={job}
-            label="Age"
-            onChange={handleChange}
-            sx={{backgroundColor: "#FFFFFF"}}
-          >
-            <MenuItem value="">
-              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-                <em>ジョブを選択</em>
-              </Typography>
-            </MenuItem>
-            <MenuItem value={10}>
-              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-                Job 1
-              </Typography>
-            </MenuItem>
-            <MenuItem value={20}>
-              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-                Job 2
-              </Typography>
-            </MenuItem>
-            <MenuItem value={30}>
-              <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-                Job 3
-              </Typography>
-            </MenuItem>
-          </Select>
-        </FormControl>
-
+        <TextField
+          value={job}
+          onChange={(e) => setJob(e.target.value)}
+          select
+          label="ジョブを選択"
+          fullWidth
+          size="small"
+          sx={{
+            width: "45%",
+            [theme.breakpoints.up('sm')]: {
+              width: '40%',
+            },
+          }}
+        >
+          <MenuItem value="">
+            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+              <em>ジョブを選択</em>
+            </Typography>
+          </MenuItem>
+          <MenuItem value={10}>
+            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+              Job 1
+            </Typography>
+          </MenuItem>
+          <MenuItem value={20}>
+            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+              Job 2
+            </Typography>
+          </MenuItem>
+          <MenuItem value={30}>
+            <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+              Job 3
+            </Typography>
+          </MenuItem>
+        </TextField>
         <TextField
           id="input-with-icon-textfield"
           sx={{
@@ -378,7 +380,7 @@ export default function EnhancedTable() {
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ cursor: 'pointer'}}
+                    sx={{ cursor: 'pointer' }}
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -387,7 +389,7 @@ export default function EnhancedTable() {
                         inputProps={{
                           'aria-labelledby': labelId,
                         }}
-                        sx={{ color: '#68A7B9', paddingTop: "16px", paddingBottom: "16px"  }}
+                        sx={{ color: '#68A7B9', paddingTop: "16px", paddingBottom: "16px" }}
                       />
                     </TableCell>
                     <TableCell
