@@ -104,6 +104,7 @@ interface HeadCell {
   id: keyof Data;
   label: string;
   numeric: boolean;
+  minWidth?: number;
 }
 
 const headCells: readonly HeadCell[] = [
@@ -112,18 +113,21 @@ const headCells: readonly HeadCell[] = [
     numeric: false,
     disablePadding: true,
     label: 'ユーザー名',
+    minWidth: 170,
   },
   {
     id: 'jobs',
     numeric: false,
     disablePadding: false,
     label: 'ジョブ',
+    minWidth: 170,
   },
   {
     id: 'created_at',
     numeric: true,
     disablePadding: false,
     label: '登録日時',
+    minWidth: 170,
   }
 ];
 
@@ -165,6 +169,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sx={{ color: '#FFFFFF', fontSize: '16px', fontWeight: '700', lineHeight: '11.58px' }}
+            style={{ minWidth: headCell.minWidth }}
             size='small'
           >
             {headCell.label}
@@ -176,8 +181,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 }
 
 export default function EnhancedTable() {
-  const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof Data>('name');
+  const order = 'asc'
+  const orderBy = 'name';
   const [selected, setSelected] = React.useState<readonly number[]>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -308,12 +313,11 @@ export default function EnhancedTable() {
         />
       </Box>
 
-      <Paper sx={{ width: '100%', mb: 2 }}>
+      <Paper sx={{ mb: 2 }}>
         <TableContainer>
           <Table
-            sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
-            size={'medium'}
+            // size={'medium'}
           >
             <EnhancedTableHead
               numSelected={selected.length}

@@ -6,7 +6,8 @@
 
 **not done
 -loading when search (B)
--router (B)
+-width table (A, done)
+-router (A)
 -CRUD target (doing)
     +list (done)
     +detail
