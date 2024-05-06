@@ -266,7 +266,7 @@ const editUser = ({params}: {params:{id :number}}) => {
 
             </Link>
           </Box>
-          <Divider sx={{ mt: 5, borderColor: "#68A7B9", borderWidth: '1px', mb: 5 }} />
+          <Divider sx={{ mt: 5, borderColor: "#68A7B9", borderWidth: '1px', mb: 5, ml: 2 }} />
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <Button variant="contained" sx={{ mr: 2, width: "130px" }} color="secondary" LinkComponent={Link} href="/users">
               <Typography
