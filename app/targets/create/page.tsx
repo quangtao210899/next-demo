@@ -152,7 +152,7 @@ const createTarget = () => {
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Link href="/portal" style={{ color: "#68A7B9", }}>
               <Typography sx={{ fontSize: '20px' }}>
-                パスワード変更
+                +パスワード変更
               </Typography>
             </Link>
           </Box>
