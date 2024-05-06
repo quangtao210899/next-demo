@@ -309,7 +309,7 @@ export default function EnhancedTable() {
         >
         <MenuItem value="">
           <Typography sx={{ color: "#797979", fontSize: "15px" }}>
-            <em>ジョブを選択</em>
+            <em>---ジョブを選択---</em>
           </Typography>
         </MenuItem>
         <MenuItem value={10}>
