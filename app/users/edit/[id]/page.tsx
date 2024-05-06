@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import TextField from "@mui/material/TextField";
 import Divider from '@mui/material/Divider';
-import ErrorTypography from "../../component/ErrorTypography"
+import ErrorTypography from "../../../component/ErrorTypography"
 import { z } from 'zod';
 import { useRouter } from 'next/navigation';
 // multi select start
@@ -75,7 +75,7 @@ const FormGrid = styled(Grid)(() => ({
   flexDirection: 'column',
 }));
 
-const editUser = () => {
+const editUser = ({params}: {params:{id :number}}) => {
   // start validate
   interface State {
     username: string,

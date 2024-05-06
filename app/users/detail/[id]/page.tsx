@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 import Link from 'next/link'
 import Typography from '@mui/material/Typography';
 
-const detailUser = () => {
+const detailUser = ({params}: {params:{id :number}}) => {
   return (
     <Box sx={{ width: '100%' }}>
       <Grid
