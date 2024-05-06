@@ -159,6 +159,7 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.username}
               onChange={handleChange('username')}
               error={!!errors.username}
+              sx= {{backgroundColor: "#FFF"}}
             />
             <ErrorTypography text={errors.username} />
           </FormGrid>
@@ -173,6 +174,7 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.email}
               onChange={handleChange('email')}
               error={!!errors.email}
+              sx= {{backgroundColor: "#FFF"}}
             />
             <ErrorTypography text={errors.email} />
           </FormGrid>
@@ -187,6 +189,7 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.fullname}
               onChange={handleChange('fullname')}
               error={!!errors.fullname}
+              sx= {{backgroundColor: "#FFF"}}
             />
             <ErrorTypography text={errors.fullname} />
           </FormGrid>
@@ -201,13 +204,14 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.department}
               onChange={handleChange('department')}
               error={!!errors.department}
+              sx= {{backgroundColor: "#FFF"}}
             />
             <ErrorTypography text={errors.department} />
           </FormGrid>
           {/* start multi select */}
           <Autocomplete
             sx={{
-              mt: 1, mb: 3
+              mt: 1, mb: 3, backgroundColor: "#FFF"
             }}
             multiple
             size="small"
