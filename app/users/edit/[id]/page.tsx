@@ -159,7 +159,7 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.username}
               onChange={handleChange('username')}
               error={!!errors.username}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.username} />
           </FormGrid>
@@ -174,7 +174,7 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.email}
               onChange={handleChange('email')}
               error={!!errors.email}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.email} />
           </FormGrid>
@@ -189,7 +189,7 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.fullname}
               onChange={handleChange('fullname')}
               error={!!errors.fullname}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.fullname} />
           </FormGrid>
@@ -204,14 +204,14 @@ const editUser = ({params}: {params:{id :number}}) => {
               value={values.department}
               onChange={handleChange('department')}
               error={!!errors.department}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.department} />
           </FormGrid>
           {/* start multi select */}
           <Autocomplete
             sx={{
-              mt: 1, mb: 3, backgroundColor: "#FFF"
+              mt: 1, mb: 3, backgroundColor: "#FFF", ml:2
             }}
             multiple
             size="small"
@@ -254,7 +254,6 @@ const editUser = ({params}: {params:{id :number}}) => {
             renderInput={(params) => (
               <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{ fontSize: '20px' }} />
             )}
-            style={{ width: '100%' }}
           />
           {/* end multi select */}
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>

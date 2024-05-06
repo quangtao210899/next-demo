@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 import Link from 'next/link'
 import Typography from '@mui/material/Typography';
 
-const detailUser = ({params}: {params:{id :number}}) => {
+const detailUser = ({ params }: { params: { id: number } }) => {
   return (
     <Box sx={{ width: '100%' }}>
       <Grid
@@ -48,11 +48,10 @@ const detailUser = ({params}: {params:{id :number}}) => {
           </Button>
         </Stack>
       </Grid>
-      <Grid container direction="row" justifyContent="space-around" alignItems="stretch" spacing={{ xs: 1, sm: 3, md: 4 }} columns={{ xs: 12, sm: 12, md: 12 }}>
+      <Grid container direction="row" justifyContent="space-around" alignItems="stretch"
+        spacing={{ xs: 1, sm: 3, md: 4 }} columns={{ xs: 12, sm: 12, md: 12 }}>
         <Grid item xs={12} sm={3} md={3}>
-          <Typography
-            sx={{ fontSize: '20px' }}
-          >
+          <Typography sx={{ fontSize: '20px', ml: 2 }}>
             ユーザー名
           </Typography>
         </Grid>
@@ -66,9 +65,7 @@ const detailUser = ({params}: {params:{id :number}}) => {
 
 
         <Grid item xs={12} sm={3} md={3}>
-          <Typography
-            sx={{ fontSize: '20px' }}
-          >
+          <Typography sx={{ fontSize: '20px', ml: 2 }}>
             メールアドレス
           </Typography>
         </Grid>
@@ -82,9 +79,7 @@ const detailUser = ({params}: {params:{id :number}}) => {
 
 
         <Grid item xs={12} sm={3} md={3}>
-          <Typography
-            sx={{ fontSize: '20px' }}
-          >
+          <Typography sx={{ fontSize: '20px', ml: 2 }}>
             姓名
           </Typography>
         </Grid>
@@ -98,9 +93,7 @@ const detailUser = ({params}: {params:{id :number}}) => {
 
 
         <Grid item xs={12} sm={3} md={3}>
-          <Typography
-            sx={{ fontSize: '20px' }}
-          >
+          <Typography sx={{ fontSize: '20px', ml: 2 }}>
             所属
           </Typography>
         </Grid>
@@ -114,9 +107,7 @@ const detailUser = ({params}: {params:{id :number}}) => {
 
 
         <Grid item xs={12} sm={3} md={3}>
-          <Typography
-            sx={{ fontSize: '20px' }}
-          >
+          <Typography sx={{ fontSize: '20px', ml: 2 }}>
             ジョブ
           </Typography>
         </Grid>

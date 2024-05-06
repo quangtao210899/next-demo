@@ -160,7 +160,7 @@ const createUser = () => {
               value={values.username}
               onChange={handleChange('username')}
               error={!!errors.username}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.username} />
           </FormGrid>
@@ -175,7 +175,7 @@ const createUser = () => {
               value={values.email}
               onChange={handleChange('email')}
               error={!!errors.email}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.email} />
           </FormGrid>
@@ -190,7 +190,7 @@ const createUser = () => {
               value={values.fullname}
               onChange={handleChange('fullname')}
               error={!!errors.fullname}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.fullname} />
           </FormGrid>
@@ -205,7 +205,7 @@ const createUser = () => {
               value={values.department}
               onChange={handleChange('department')}
               error={!!errors.department}
-              sx= {{backgroundColor: "#FFF"}}
+              sx= {{backgroundColor: "#FFF", ml:2}}
             />
             <ErrorTypography text={errors.department} />
           </FormGrid>
@@ -253,8 +253,7 @@ const createUser = () => {
             renderInput={(params) => (
               <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{ fontSize: '20px' }} />
             )}
-            style={{ width: '100%' }}
-            sx={{ mt: 1, mb: 3, backgroundColor: "#FFF" }}
+            sx={{ mt: 1, mb: 3, backgroundColor: "#FFF", ml:2 }}
           />
           {/* end multi select */}
 
