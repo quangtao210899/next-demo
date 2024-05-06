@@ -157,10 +157,26 @@ const createTarget = () => {
               size="small"
               placeholder="ユーザー名"
               inputProps={{ style: { fontSize: '20px' } }}
+              sx={{ backgroundColor: "#FFF" }}
+              // value={values.username}
+              // onChange={handleChange('username')}
+              // error={!!errors.username}
+            />
+            {/* <ErrorTypography text={errors.username} /> */}
+          </FormGrid>
+          <Divider sx={{ mt: 4, borderColor: "#68A7B9", borderWidth: '1px', mb: 2 }} />
+          <FormGrid item xs={12} md={6}>
+            <TextField
+              id="outlined-basic-1"
+              variant="outlined"
+              margin="dense"
+              size="small"
+              placeholder="ユーザー名"
+              inputProps={{ style: { fontSize: '20px' } }}
               value={values.username}
               onChange={handleChange('username')}
               error={!!errors.username}
-              sx= {{backgroundColor: "#FFF"}}
+              sx={{ backgroundColor: "#FFF" }}
             />
             <ErrorTypography text={errors.username} />
           </FormGrid>
@@ -175,7 +191,7 @@ const createTarget = () => {
               value={values.email}
               onChange={handleChange('email')}
               error={!!errors.email}
-              sx= {{backgroundColor: "#FFF"}}
+              sx={{ backgroundColor: "#FFF" }}
             />
             <ErrorTypography text={errors.email} />
           </FormGrid>
@@ -190,7 +206,7 @@ const createTarget = () => {
               value={values.fullname}
               onChange={handleChange('fullname')}
               error={!!errors.fullname}
-              sx= {{backgroundColor: "#FFF"}}
+              sx={{ backgroundColor: "#FFF" }}
             />
             <ErrorTypography text={errors.fullname} />
           </FormGrid>
@@ -205,7 +221,7 @@ const createTarget = () => {
               value={values.department}
               onChange={handleChange('department')}
               error={!!errors.department}
-              sx= {{backgroundColor: "#FFF"}}
+              sx={{ backgroundColor: "#FFF" }}
             />
             <ErrorTypography text={errors.department} />
           </FormGrid>
@@ -254,7 +270,7 @@ const createTarget = () => {
               <TextField {...params} placeholder={selectedOptions.length ? "" : "ジョブ"} sx={{ fontSize: '20px' }} />
             )}
             style={{ width: '100%' }}
-            sx={{ mt: 1, mb: 3, backgroundColor: "#FFF"}}
+            sx={{ mt: 1, mb: 3, backgroundColor: "#FFF" }}
           />
           {/* end multi select */}
 
