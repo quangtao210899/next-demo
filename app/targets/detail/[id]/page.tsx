@@ -39,7 +39,7 @@ const detailTarget = ({ params }: { params: { id: number } }) => {
               戻る
             </Typography>
           </Button>
-          <Button variant="contained" sx={{ width: "110px" }} LinkComponent={Link} href="/users/edit">
+          <Button variant="contained" sx={{ width: "110px" }} LinkComponent={Link} href="/users/edit/2">
             <Typography
               sx={{
                 color: "#FFFFFF",
