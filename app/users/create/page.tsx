@@ -242,10 +242,12 @@ const createUser = () => {
               value.map((option: any, index: number) => (
                 <Chip label={option.title} {...getTagProps({ index })}
                   sx={{
-                    fontSize: '14px',
+                    fontSize: '12px',
                     fontWeight: '700',
                     color: "#FFFFFF",
-                    backgroundColor: "#68A7B9BF"
+                    backgroundColor: "#68A7B9BF",
+                    margin: "0px 2px !important",
+                    maxHeight: "25px"
                   }}
                 />
               ))
