@@ -259,7 +259,7 @@ export default function EnhancedTable() {
         </Typography>
         <Stack direction="row" spacing={2}>
           <Button variant="contained" sx={{ width: "110px" }}
-            LinkComponent={Link} href="/users/create">
+            LinkComponent={Link} href="/targets/create">
             <Typography
               sx={{
                 color: "#FFFFFF",
