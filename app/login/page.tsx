@@ -157,10 +157,7 @@ const LoginPage = () => {
               fullWidth
               size='large'
               variant='contained'
-              sx={{
-                marginBottom: 2,
-                radius: "2px"
-              }}
+              sx={{marginBottom: 2, radius: "2px"}}
               onClick={handleSubmit}
             >
               サインイン
