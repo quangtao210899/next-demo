@@ -12,6 +12,8 @@ import ErrorTypography from "../../component/ErrorTypography"
 import { z } from 'zod';
 import { useRouter } from 'next/navigation';
 import MenuItem from '@mui/material/MenuItem';
+import DragIndicatorTwoToneIcon from '@mui/icons-material/DragIndicatorTwoTone';
+import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
 const FormGrid = styled(Grid)(() => ({
   display: 'flex',
   flexDirection: 'column',
@@ -114,6 +116,8 @@ const createTarget = () => {
           </Box>
           {/* item */}
           <FormGrid item xs={12} md={6} sx={{ ml: 2 }}>
+            <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9" }} />
+            <ClearTwoToneIcon sx={{ color: "#68A7B9" }} />
             <TextField
               select
               id="outlined-basic-1"
@@ -145,7 +149,13 @@ const createTarget = () => {
             </TextField>
             <ErrorTypography text={errors.username} />
           </FormGrid>
-
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Link href="/portal" style={{ color: "#68A7B9", }}>
+              <Typography sx={{ fontSize: '20px' }}>
+                パスワード変更
+              </Typography>
+            </Link>
+          </Box>
           <Divider sx={{ mt: 2, borderColor: "#68A7B9", borderWidth: '1px', mb: 5, ml: 2 }} />
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <Button variant="contained" color="secondary" sx={{ mr: 2, width: "130px" }} LinkComponent={Link} href="/targets">
