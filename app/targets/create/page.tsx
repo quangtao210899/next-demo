@@ -117,14 +117,14 @@ const createTarget = () => {
           {/* item */}
           <Grid container direction="row" justifyContent="space-around" alignItems="stretch"
             columns={{ xs: 2, sm: 12, md: 12 }} sx={{ mb: 2 }}>
-            <Grid item xs={2} sm={3} md={3}
+            <Grid item xs={2} sm={3} md={2}
               sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start" }}>
-              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 2 }} />
-              <Typography sx={{ fontSize: '16px', marginLeft: '5px' }}>
-                対象設定
+              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 3 }} />
+              <Typography sx={{ fontSize: '16px', marginLeft: '5px', color: "#9C9C9C" }}>
+                性別
               </Typography>
             </Grid>
-            <Grid item xs={2} sm={9} md={9}
+            <Grid item xs={2} sm={9} md={10}
               sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end" }}>
               <TextField
                 select
@@ -158,15 +158,184 @@ const createTarget = () => {
               <ErrorTypography text={errors.username} />
               <ClearTwoToneIcon sx={{ color: "#68A7B9" }} />
             </Grid>
-            <Grid item xs={2} sm={3} md={3}
-              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start" }}>
-              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 2 }} />
-              <Typography sx={{ fontSize: '16px', marginLeft: '5px' }}>
-                対象設定
+
+            <Grid item xs={2} sm={3} md={2}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start",mt:2 }}>
+              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 3 }} />
+              <Typography sx={{ fontSize: '16px', marginLeft: '5px', color: "#9C9C9C" }}>
+                年代
               </Typography>
             </Grid>
-            <Grid item xs={2} sm={9} md={9}
-              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end" }}>
+            <Grid item xs={2} sm={9} md={10}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end", mt: 2 }}>
+              <TextField
+                select
+                id="outlined-basic-1"
+                variant="outlined"
+                margin="dense"
+                size="small"
+                placeholder="ユーザー名"
+                inputProps={{ style: { fontSize: '20px' } }}
+                value={values.username}
+                onChange={handleChange('username')}
+                error={!!errors.username}
+                sx={{ backgroundColor: "#FFF", width: "100%" }}
+              >
+                <MenuItem value={10}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 1
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={20}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 2
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={30}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 3
+                  </Typography>
+                </MenuItem>
+              </TextField>
+              <ErrorTypography text={errors.username} />
+              <ClearTwoToneIcon sx={{ color: "#68A7B9" }} />
+            </Grid>
+
+            <Grid item xs={2} sm={3} md={2}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start" ,mt:2 }}>
+              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 3 }} />
+              <Typography sx={{ fontSize: '16px', marginLeft: '5px', color: "#9C9C9C" }}>
+                地域
+              </Typography>
+            </Grid>
+            <Grid item xs={2} sm={9} md={10}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end" ,mt:2 }}>
+              <TextField
+                select
+                id="outlined-basic-1"
+                variant="outlined"
+                margin="dense"
+                size="small"
+                placeholder="ユーザー名"
+                inputProps={{ style: { fontSize: '20px' } }}
+                value={values.username}
+                onChange={handleChange('username')}
+                error={!!errors.username}
+                sx={{ backgroundColor: "#FFF", width: "100%" }}
+              >
+                <MenuItem value={10}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 1
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={20}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 2
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={30}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 3
+                  </Typography>
+                </MenuItem>
+              </TextField>
+              <ErrorTypography text={errors.username} />
+              <ClearTwoToneIcon sx={{ color: "#68A7B9" }} />
+            </Grid>
+
+            <Grid item xs={2} sm={3} md={2}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start" ,mt:2 }}>
+              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 3 }} />
+              <Typography sx={{ fontSize: '16px', marginLeft: '5px', color: "#9C9C9C" }}>
+                時間帯
+              </Typography>
+            </Grid>
+            <Grid item xs={2} sm={9} md={10}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end" ,mt:2 }}>
+              <TextField
+                select
+                id="outlined-basic-1"
+                variant="outlined"
+                margin="dense"
+                size="small"
+                placeholder="ユーザー名"
+                inputProps={{ style: { fontSize: '20px' } }}
+                value={values.username}
+                onChange={handleChange('username')}
+                error={!!errors.username}
+                sx={{ backgroundColor: "#FFF", width: "100%" }}
+              >
+                <MenuItem value={10}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 1
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={20}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 2
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={30}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 3
+                  </Typography>
+                </MenuItem>
+              </TextField>
+              <ErrorTypography text={errors.username} />
+              <ClearTwoToneIcon sx={{ color: "#68A7B9" }} />
+            </Grid>
+
+            <Grid item xs={2} sm={3} md={2}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start" ,mt:2 }}>
+              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 3 }} />
+              <Typography sx={{ fontSize: '16px', marginLeft: '5px', color: "#9C9C9C" }}>
+                家族構成
+              </Typography>
+            </Grid>
+            <Grid item xs={2} sm={9} md={10}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end",mt:2  }}>
+              <TextField
+                select
+                id="outlined-basic-1"
+                variant="outlined"
+                margin="dense"
+                size="small"
+                placeholder="ユーザー名"
+                inputProps={{ style: { fontSize: '20px' } }}
+                value={values.username}
+                onChange={handleChange('username')}
+                error={!!errors.username}
+                sx={{ backgroundColor: "#FFF", width: "100%" }}
+              >
+                <MenuItem value={10}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 1
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={20}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 2
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={30}>
+                  <Typography sx={{ color: "#797979", fontSize: "15px" }}>
+                    Item 3
+                  </Typography>
+                </MenuItem>
+              </TextField>
+              <ErrorTypography text={errors.username} />
+              <ClearTwoToneIcon sx={{ color: "#68A7B9" }} />
+            </Grid>
+
+            <Grid item xs={2} sm={3} md={2}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start",mt:2  }}>
+              <DragIndicatorTwoToneIcon sx={{ color: "#68A7B9", ml: 3 }} />
+              <Typography sx={{ fontSize: '16px', marginLeft: '5px', color: "#9C9C9C" }}>
+                職業
+              </Typography>
+            </Grid>
+            <Grid item xs={2} sm={9} md={10}
+              sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-end" ,mt:2 }}>
               <TextField
                 select
                 id="outlined-basic-1"
@@ -202,8 +371,8 @@ const createTarget = () => {
           </Grid>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Link href="/portal" style={{ color: "#68A7B9", }}>
-              <Typography sx={{ fontSize: '16px' }}>
-                +パスワード変更
+              <Typography sx={{ fontSize: '20px' }}>
+                ＋対象属性追加
               </Typography>
             </Link>
           </Box>
